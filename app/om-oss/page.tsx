@@ -23,7 +23,7 @@ export default function OmOss() {
 
       <div className="direct-answer">
         <p className="font-medium">
-          elbil.io er en uavhengig informasjonsplattform om elbil i Norge. Vi selger ingenting, har ingen affiliatelenker og tar ikke betalt for omtale. Vårt eneste mål er å gi deg pålitelig, oppdatert og forståelig informasjon.
+          elbil.io er en uavhengig informasjonsplattform om elbil i Norge. Vårt mål er å gi deg pålitelig, oppdatert og forståelig informasjon om alt som har med elbil å gjøre.
         </p>
       </div>
 
@@ -74,7 +74,7 @@ export default function OmOss() {
 
         <h2 id="forretningsmodell">Forretningsmodell</h2>
         <p>
-          elbil.io drives som en ren informasjonsplattform. Vi har per i dag ingen annonseinntekter, affiliatelenker eller betalte samarbeid. Nettsiden eksisterer for å bygge Norges mest komplette elbilressurs.
+          elbil.io drives som en informasjonsplattform med fokus på kvalitet og norsk relevans. Nettsiden eksisterer for å bygge Norges mest komplette elbilressurs. All redaksjonell omtale er uavhengig av eventuelle kommersielle samarbeid.
         </p>
 
         <h2 id="kontakt">Kontakt</h2>

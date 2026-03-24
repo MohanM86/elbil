@@ -19,15 +19,15 @@ const pillars = [
 ]
 
 const tools = [
-  { title: 'Ladekostnadskalkulator', desc: 'Beregn hva det koster a lade per ar', href: '/verktoy/ladekalkulator', icon: <IconPlug size={18} /> },
-  { title: 'Besparelseskalkulator', desc: 'Elbil vs fossilbil over 1-10 ar', href: '/verktoy/besparelseskalkulator', icon: <IconCalculator size={18} /> },
+  { title: 'Ladekostnadskalkulator', desc: 'Beregn hva det koster å lade per år', href: '/verktoy/ladekalkulator', icon: <IconPlug size={18} /> },
+  { title: 'Besparelseskalkulator', desc: 'Elbil vs fossilbil over 1 til 10 år', href: '/verktoy/besparelseskalkulator', icon: <IconCalculator size={18} /> },
   { title: 'Rekkeviddeberegner', desc: 'Reell rekkevidde for din bil', href: '/verktoy/rekkevidde', icon: <IconGauge size={18} /> },
 ]
 
 const popularArticles = [
   { title: 'Hvordan lade elbil hjemme', href: '/hvordan-lade-elbil-hjemme' },
   { title: 'Hva koster det a lade elbil?', href: '/ladepris-elbil' },
-  { title: 'Hvor mye sparer man pa elbil?', href: '/hvor-mye-sparer-man-pa-elbil' },
+  { title: 'Hvor mye sparer man på elbil?', href: '/hvor-mye-sparer-man-pa-elbil' },
   { title: 'Hurtiglading forklart', href: '/hurtiglading-elbil' },
   { title: 'Hvor lenge varer en elbil?', href: '/hvor-lenge-varer-elbil' },
   { title: 'Beste elbil 2026', href: '/beste-elbil-2026' },
@@ -61,8 +61,8 @@ export default function HomePage() {
           </h1>
 
           <p className="anim-up anim-delay-2 text-lg sm:text-xl text-light-500 max-w-xl leading-relaxed mb-10">
-            250+ artikler. 3 interaktive kalkulatorer. Null salg, null affiliate.
-            Kun informasjon du kan stole pa.
+            250+ artikler. 3 interaktive kalkulatorer.
+            Kun informasjon du kan stole på.
           </p>
 
           <div className="anim-up anim-delay-3 flex flex-wrap gap-3">
@@ -126,7 +126,7 @@ export default function HomePage() {
       <section className="bg-dark-900 relative overflow-hidden">
         <div className="absolute inset-0 grid-bg" />
         <div className="relative max-w-wide mx-auto px-4 sm:px-6 py-16 sm:py-24">
-          <p className="text-[16px] uppercase tracking-[0.2em] text-pulse-500 font-medium mb-3">Gratis verktoy</p>
+          <p className="text-[16px] uppercase tracking-[0.2em] text-pulse-500 font-medium mb-3">Gratis verktøy</p>
           <h2 className="font-display text-3xl sm:text-4xl text-white tracking-tight mb-10">Interaktive kalkulatorer</h2>
 
           <div className="grid sm:grid-cols-3 gap-3">
@@ -150,7 +150,7 @@ export default function HomePage() {
       {/* === LIGHT: POPULAR ARTICLES === */}
       <section className="bg-white border-t border-light-200">
         <div className="max-w-wide mx-auto px-4 sm:px-6 py-16 sm:py-20">
-          <p className="text-[16px] uppercase tracking-[0.2em] text-light-400 font-medium mb-3">Populaert</p>
+          <p className="text-[16px] uppercase tracking-[0.2em] text-light-400 font-medium mb-3">Populært</p>
           <h2 className="font-display text-3xl sm:text-4xl tracking-tight mb-8">Mest leste artikler</h2>
 
           <div className="grid sm:grid-cols-2 gap-2">

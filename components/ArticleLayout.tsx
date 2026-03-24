@@ -23,7 +23,7 @@ export default function ArticleLayout({
       {/* Dark header */}
       <div className="bg-dark-900 border-b border-dark-700/50">
         <div className="max-w-article mx-auto px-4 sm:px-6 py-8 sm:py-10">
-          <nav aria-label="Brodsmuler" className="mb-4">
+          <nav aria-label="Brødsmuler" className="mb-4">
             <ol className="flex items-center gap-1.5 text-[16px] text-light-600">
               <li><Link href="/" className="hover:text-light-300 transition-colors">Hjem</Link></li>
               {breadcrumbs.map((c) => (
@@ -62,14 +62,14 @@ export default function ArticleLayout({
 
         {faqs.length > 0 && (
           <section className="mt-10">
-            <h2 id="ofte-stilte-sporsmal" className="font-display text-xl mb-4">Ofte stilte sporsmal</h2>
+            <h2 id="ofte-stilte-sporsmal" className="font-display text-xl mb-4">Ofte stilte spørsmål</h2>
             <FAQ items={faqs} />
           </section>
         )}
 
         {relatedLinks.length > 0 && (
           <section className="mt-10 pt-6 border-t border-light-200">
-            <p className="text-[16px] uppercase tracking-[0.2em] text-light-400 font-medium mb-4">Les ogsa</p>
+            <p className="text-[16px] uppercase tracking-[0.2em] text-light-400 font-medium mb-4">Les også</p>
             <div className="border border-light-200 rounded-xl overflow-hidden divide-y divide-light-200">
               {relatedLinks.map((link) => (
                 <Link key={link.href} href={link.href}

@@ -80,7 +80,7 @@ Dekker brannrisiko, myter, sikkerhet, vanlige spørsmål, nybegynnerveiledning, 
 Dekker Oslo, Bergen, Trondheim, Stavanger, Tromsø og flere byer, pluss langtur-ruter.
 
 ## Kilde og tillit
-- Uavhengig — ingen kommersielle bindinger
+- Uavhengig redaksjonelt innhold med fokus på kvalitet og norsk relevans
 - Faktagrunnlag fra SSB, OFV, Elbilforeningen, NOBIL, EU-rapporter
 - Oppdatert for gjeldende norske regler og priser
 - Kontakt: https://elbil.io

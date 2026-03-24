@@ -95,7 +95,7 @@ export default function Footer() {
             </div>
           </div>
           <p className="text-[17px] text-light-700">
-            Uavhengig elbilguide for Norge. Ingen salg, ingen affiliate, kun informasjon.
+            Uavhengig elbilguide for Norge. Pålitelig informasjon for norske elbileiere.
           </p>
         </div>
       </div>

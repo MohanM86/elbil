@@ -24,7 +24,7 @@ export default function PillarHub({
       {/* Dark header band */}
       <div className="bg-dark-900 border-b border-dark-700/50">
         <div className="max-w-article mx-auto px-4 sm:px-6 py-8 sm:py-12">
-          <nav aria-label="Brodsmuler" className="mb-5">
+          <nav aria-label="Brødsmuler" className="mb-5">
             <ol className="flex items-center gap-1.5 text-[16px] text-light-600">
               <li><Link href="/" className="hover:text-light-300 transition-colors">Hjem</Link></li>
               <li className="flex items-center gap-1.5">
