@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.title,
-    template: `%s — ${siteConfig.name}`,
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   openGraph: {
@@ -25,9 +25,7 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
   },
-  alternates: {
-    canonical: siteConfig.url,
-  },
+  alternates: { canonical: siteConfig.url },
   robots: {
     index: true,
     follow: true,
@@ -39,34 +37,22 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  other: {
-    'google-site-verification': 'PLACEHOLDER_GOOGLE_VERIFICATION',
-  },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="nb">
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#0a0a0a" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generateWebSiteSchema()),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateWebSiteSchema()) }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generateOrganizationSchema()),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateOrganizationSchema()) }}
         />
       </head>
       <body className="min-h-screen flex flex-col">

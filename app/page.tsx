@@ -1,203 +1,212 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { siteConfig } from '@/lib/config'
+import { IconBolt, IconPlug, IconWallet, IconTrophy, IconRuler, IconCompass, IconGauge, IconCalculator, IconArrowRight, IconBattery, IconLeaf, IconMap, IconHelpCircle } from '@/components/Icons'
 
 export const metadata: Metadata = {
-  title: 'elbil.io — Alt om elbil i Norge',
+  title: 'elbil.io | Alt om elbil i Norge',
   description: siteConfig.description,
   alternates: { canonical: siteConfig.url },
 }
 
 const pillars = [
-  {
-    title: 'Hva er en elbil?',
-    desc: 'Enkel forklaring på hvordan elbiler fungerer, og hvorfor Norge leder an.',
-    href: '/hva-er-elbil',
-    icon: '⚡',
-  },
-  {
-    title: 'Beste elbil 2026',
-    desc: 'Oversikt og sammenligning av årets beste elbiler i Norge.',
-    href: '/beste-elbil',
-    icon: '🏆',
-  },
-  {
-    title: 'Lading',
-    desc: 'Alt om hjemmelading, hurtiglading, ladekort og priser.',
-    href: '/elbil-lading',
-    icon: '🔌',
-  },
-  {
-    title: 'Kostnader',
-    desc: 'Hva koster det egentlig å eie en elbil? Vi regner ut.',
-    href: '/elbil-kostnader',
-    icon: '💰',
-  },
-  {
-    title: 'Rekkevidde',
-    desc: 'Reell rekkevidde, vintertall og tips for lengre kjøring.',
-    href: '/elbil-rekkevidde',
-    icon: '📏',
-  },
-  {
-    title: 'Hvilken elbil?',
-    desc: 'Hjelp til å finne elbilen som passer deg og din hverdag.',
-    href: '/hvilken-elbil-skal-jeg-velge',
-    icon: '🤔',
-  },
+  { title: 'Lading', desc: 'Hjemme, hurtig, priser og tips', href: '/elbil-lading', icon: <IconPlug size={18} /> },
+  { title: 'Kostnader', desc: 'Drift, besparelser og avgifter', href: '/elbil-kostnader', icon: <IconWallet size={18} /> },
+  { title: 'Beste elbil', desc: 'Sammenligning av toppmodeller', href: '/beste-elbil', icon: <IconTrophy size={18} /> },
+  { title: 'Rekkevidde', desc: 'Reelle tall, vinter og motorvei', href: '/elbil-rekkevidde', icon: <IconRuler size={18} /> },
+  { title: 'Batteri', desc: 'Teknologi, levetid og garanti', href: '/batteri-elbil', icon: <IconBattery size={18} /> },
+  { title: 'Velg elbil', desc: 'Finn elbilen som passer deg', href: '/hvilken-elbil-skal-jeg-velge', icon: <IconCompass size={18} /> },
+]
+
+const tools = [
+  { title: 'Ladekostnadskalkulator', desc: 'Beregn hva det koster a lade per ar', href: '/verktoy/ladekalkulator', icon: <IconPlug size={18} /> },
+  { title: 'Besparelseskalkulator', desc: 'Elbil vs fossilbil over 1-10 ar', href: '/verktoy/besparelseskalkulator', icon: <IconCalculator size={18} /> },
+  { title: 'Rekkeviddeberegner', desc: 'Reell rekkevidde for din bil', href: '/verktoy/rekkevidde', icon: <IconGauge size={18} /> },
 ]
 
 const popularArticles = [
   { title: 'Hvordan lade elbil hjemme', href: '/hvordan-lade-elbil-hjemme' },
-  { title: 'Hva koster det å lade elbil?', href: '/ladepris-elbil' },
-  { title: 'Hvor mye sparer man på elbil?', href: '/hvor-mye-sparer-man-pa-elbil' },
+  { title: 'Hva koster det a lade elbil?', href: '/ladepris-elbil' },
+  { title: 'Hvor mye sparer man pa elbil?', href: '/hvor-mye-sparer-man-pa-elbil' },
   { title: 'Hurtiglading forklart', href: '/hurtiglading-elbil' },
   { title: 'Hvor lenge varer en elbil?', href: '/hvor-lenge-varer-elbil' },
-  { title: 'Elbil om vinteren: 15 tips', href: '/artikler/elbil-vinter-tips' },
-  { title: 'Elbil vs fossilbil: Kostnad', href: '/artikler/elbil-vs-fossilbil-kostnad' },
-  { title: 'Elbilbatteri: Alt du bør vite', href: '/batteri-elbil' },
+  { title: 'Beste elbil 2026', href: '/beste-elbil-2026' },
+]
+
+const clusters = [
+  { title: 'Miljo og barekraft', desc: '18 artikler', href: '/artikler/elbil-miljo-fordeler', icon: <IconLeaf size={16} /> },
+  { title: 'Byguider', desc: '20 byguider', href: '/artikler/elbil-oslo', icon: <IconMap size={16} /> },
+  { title: 'Myter og FAQ', desc: '22 artikler', href: '/artikler/elbil-myter', icon: <IconHelpCircle size={16} /> },
 ]
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-surface-950 text-white">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-surface-950 to-surface-900" />
-        <div className="relative max-w-wide mx-auto px-4 sm:px-6 py-20 sm:py-32">
-          <p className="text-primary-400 text-sm font-medium tracking-wide uppercase mb-4 animate-fade-up">
-            Norges elbilguide
-          </p>
-          <h1
-            className="font-display text-5xl sm:text-6xl lg:text-[4.5rem] text-white mb-6 animate-fade-up"
-            style={{ animationDelay: '0.1s' }}
-          >
-            Alt om elbil,{' '}
-            <span className="text-primary-400">på ett sted</span>
+      {/* === DARK HERO === */}
+      <section className="relative bg-dark-900 overflow-hidden">
+        <div className="absolute inset-0 grid-bg" />
+        {/* Subtle pulse glow top center */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-pulse-500/5 rounded-full blur-3xl" />
+
+        <div className="relative max-w-wide mx-auto px-4 sm:px-6 py-20 sm:py-28 lg:py-36">
+          {/* Badge */}
+          <div className="anim-up inline-flex items-center gap-2 bg-pulse-500/10 border border-pulse-500/20 rounded-full px-4 py-1.5 mb-6">
+            <div className="w-1.5 h-1.5 rounded-full bg-pulse-500" />
+            <span className="text-[11px] text-pulse-400 tracking-wide font-medium">Norges elbilguide — 2026</span>
+          </div>
+
+          <h1 className="anim-up anim-delay-1 font-display text-[clamp(2.5rem,6vw,4.5rem)] text-white leading-[1.05] tracking-tight mb-5 max-w-2xl">
+            Elbil forklart. <br />
+            <span className="text-pulse-400">Enkelt og uavhengig.</span>
           </h1>
-          <p
-            className="text-lg sm:text-xl text-surface-300 max-w-xl leading-relaxed mb-10 animate-fade-up"
-            style={{ animationDelay: '0.2s' }}
-          >
-            Uavhengig informasjon om lading, kostnader, rekkevidde og modeller.
-            Oppdatert og skrevet for norske forhold.
+
+          <p className="anim-up anim-delay-2 text-[15px] sm:text-base text-light-500 max-w-lg leading-relaxed mb-8">
+            250+ artikler. 3 interaktive kalkulatorer. Null salg, null affiliate.
+            Kun informasjon du kan stole pa.
           </p>
-          <div
-            className="flex flex-wrap gap-3 animate-fade-up"
-            style={{ animationDelay: '0.3s' }}
-          >
+
+          <div className="anim-up anim-delay-3 flex flex-wrap gap-3">
             <Link
               href="/elbil"
-              className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-500 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              className="inline-flex items-center gap-2 bg-pulse-500 hover:bg-pulse-400 text-dark-900 px-5 py-2.5 rounded-lg text-[13px] font-semibold transition-colors"
             >
-              Utforsk guiden
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
+              Utforsk guiden <IconArrowRight size={13} />
             </Link>
             <Link
-              href="/hvilken-elbil-skal-jeg-velge"
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              href="/verktoy/ladekalkulator"
+              className="inline-flex items-center gap-2 border border-dark-500 hover:border-light-500 text-light-300 hover:text-white px-5 py-2.5 rounded-lg text-[13px] font-medium transition-colors"
             >
-              Finn din elbil
+              Kalkulatorer
             </Link>
+          </div>
+
+          {/* Stats */}
+          <div className="anim-up anim-delay-4 flex gap-8 mt-14 pt-8 border-t border-dark-700/40">
+            {[
+              { value: '250+', label: 'Artikler' },
+              { value: '3', label: 'Kalkulatorer' },
+              { value: '100%', label: 'Uavhengig' },
+            ].map((s) => (
+              <div key={s.label}>
+                <p className="text-xl sm:text-2xl font-semibold text-pulse-400 tracking-tight">{s.value}</p>
+                <p className="text-[11px] text-light-600 uppercase tracking-wider mt-1">{s.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Pillar grid */}
-      <section className="max-w-wide mx-auto px-4 sm:px-6 py-16 sm:py-24">
-        <h2 className="font-display text-3xl sm:text-4xl text-center mb-4">
-          Utforsk temaene
-        </h2>
-        <p className="text-center text-surface-500 mb-12 max-w-lg mx-auto">
-          Dykk inn i de viktigste emnene rundt elbil i Norge
-        </p>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {pillars.map((p) => (
-            <Link
-              key={p.href}
-              href={p.href}
-              className="group p-6 rounded-2xl border border-surface-200 bg-white hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100/50 transition-all"
-            >
-              <span className="text-3xl mb-3 block">{p.icon}</span>
-              <h3 className="font-display text-xl mb-2 group-hover:text-primary-700 transition-colors">
-                {p.title}
-              </h3>
-              <p className="text-sm text-surface-500 leading-relaxed">
-                {p.desc}
-              </p>
-            </Link>
-          ))}
-        </div>
-      </section>
+      {/* === LIGHT: TOPIC GRID === */}
+      <section className="bg-light-50">
+        <div className="max-w-wide mx-auto px-4 sm:px-6 py-16 sm:py-24">
+          <p className="text-[10px] uppercase tracking-[0.2em] text-light-400 font-medium mb-3">Utforsk</p>
+          <h2 className="font-display text-2xl sm:text-3xl tracking-tight mb-10">Hovedtemaer</h2>
 
-      {/* Popular articles */}
-      <section className="bg-surface-100 border-y border-surface-200">
-        <div className="max-w-wide mx-auto px-4 sm:px-6 py-16 sm:py-20">
-          <h2 className="font-display text-3xl mb-8">Populære artikler</h2>
-          <div className="grid sm:grid-cols-2 gap-3">
-            {popularArticles.map((a) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {pillars.map((p) => (
               <Link
-                key={a.href}
-                href={a.href}
-                className="flex items-center gap-3 bg-white p-4 rounded-xl border border-surface-200 hover:border-primary-300 hover:shadow-sm transition-all group"
+                key={p.href}
+                href={p.href}
+                className="group flex items-start gap-3.5 p-4 rounded-xl border border-light-200 bg-white hover:border-pulse-300 hover:shadow-lg hover:shadow-pulse-500/5 transition-all"
               >
-                <div className="w-8 h-8 rounded-lg bg-primary-100 text-primary-700 flex items-center justify-center shrink-0 group-hover:bg-primary-600 group-hover:text-white transition-colors">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
+                <div className="w-9 h-9 rounded-lg bg-light-100 text-pulse-600 flex items-center justify-center shrink-0 group-hover:bg-pulse-500 group-hover:text-white transition-colors">
+                  {p.icon}
                 </div>
-                <span className="text-sm font-medium text-surface-700 group-hover:text-surface-900">
-                  {a.title}
-                </span>
+                <div>
+                  <p className="text-[14px] font-medium text-light-900 group-hover:text-pulse-700 transition-colors">{p.title}</p>
+                  <p className="text-[12px] text-light-400 mt-0.5">{p.desc}</p>
+                </div>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Interactive tools */}
-      <section className="max-w-wide mx-auto px-4 sm:px-6 py-16 sm:py-20">
-        <h2 className="font-display text-3xl sm:text-4xl text-center mb-4">
-          Gratis verktøy
-        </h2>
-        <p className="text-center text-surface-500 mb-10 max-w-lg mx-auto">
-          Regn ut kostnader, besparelser og rekkevidde for din elbil
-        </p>
-        <div className="grid sm:grid-cols-3 gap-4">
-          {[
-            {
-              title: 'Ladekostnadskalkulator',
-              desc: 'Beregn hva det koster å lade elbilen din hjemme og på hurtiglader.',
-              href: '/verktoy/ladekalkulator',
-              icon: '🔌',
-            },
-            {
-              title: 'Besparelseskalkulator',
-              desc: 'Se hvor mye du sparer med elbil vs fossilbil over 1 til 10 år.',
-              href: '/verktoy/besparelseskalkulator',
-              icon: '💰',
-            },
-            {
-              title: 'Rekkeviddeberegner',
-              desc: 'Finn reell rekkevidde for din elbil basert på sesong og hastighet.',
-              href: '/verktoy/rekkevidde',
-              icon: '📏',
-            },
-          ].map((tool) => (
-            <Link
-              key={tool.href}
-              href={tool.href}
-              className="group p-6 rounded-2xl border border-surface-200 bg-white hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100/50 transition-all text-center"
-            >
-              <span className="text-4xl mb-3 block">{tool.icon}</span>
-              <h3 className="font-display text-lg mb-2 group-hover:text-primary-700 transition-colors">
-                {tool.title}
-              </h3>
-              <p className="text-sm text-surface-500">{tool.desc}</p>
-            </Link>
-          ))}
+      {/* === DARK: TOOLS === */}
+      <section className="bg-dark-900 relative overflow-hidden">
+        <div className="absolute inset-0 grid-bg" />
+        <div className="relative max-w-wide mx-auto px-4 sm:px-6 py-16 sm:py-24">
+          <p className="text-[10px] uppercase tracking-[0.2em] text-pulse-500 font-medium mb-3">Gratis verktoy</p>
+          <h2 className="font-display text-2xl sm:text-3xl text-white tracking-tight mb-10">Interaktive kalkulatorer</h2>
+
+          <div className="grid sm:grid-cols-3 gap-3">
+            {tools.map((t) => (
+              <Link
+                key={t.href}
+                href={t.href}
+                className="group p-5 rounded-xl border border-dark-600 bg-dark-800/50 hover:border-pulse-600/40 hover:bg-dark-800 transition-all"
+              >
+                <div className="w-10 h-10 rounded-lg bg-dark-700 text-pulse-500 flex items-center justify-center mb-3 group-hover:bg-pulse-600 group-hover:text-white transition-colors">
+                  {t.icon}
+                </div>
+                <p className="text-[14px] font-medium text-light-200 mb-1">{t.title}</p>
+                <p className="text-[12px] text-light-500">{t.desc}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* === LIGHT: POPULAR ARTICLES === */}
+      <section className="bg-white border-t border-light-200">
+        <div className="max-w-wide mx-auto px-4 sm:px-6 py-16 sm:py-20">
+          <p className="text-[10px] uppercase tracking-[0.2em] text-light-400 font-medium mb-3">Populaert</p>
+          <h2 className="font-display text-2xl sm:text-3xl tracking-tight mb-8">Mest leste artikler</h2>
+
+          <div className="grid sm:grid-cols-2 gap-2">
+            {popularArticles.map((a) => (
+              <Link
+                key={a.href}
+                href={a.href}
+                className="flex items-center gap-3 p-3.5 rounded-xl border border-light-200 hover:border-pulse-300 hover:bg-pulse-50/30 transition-all group"
+              >
+                <div className="pulse-dot" />
+                <span className="text-[13px] text-light-700 group-hover:text-light-900 font-medium">{a.title}</span>
+                <IconArrowRight size={12} className="ml-auto text-light-300 group-hover:text-pulse-500 shrink-0 transition-colors" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* === MORE CLUSTERS === */}
+      <section className="bg-light-100 border-t border-light-200">
+        <div className="max-w-wide mx-auto px-4 sm:px-6 py-14 sm:py-16">
+          <div className="grid sm:grid-cols-3 gap-3">
+            {clusters.map((c) => (
+              <Link
+                key={c.href}
+                href={c.href}
+                className="group flex items-center gap-3 p-4 rounded-xl bg-white border border-light-200 hover:border-pulse-300 transition-all"
+              >
+                <div className="w-8 h-8 rounded-md bg-light-100 text-pulse-600 flex items-center justify-center shrink-0 group-hover:bg-pulse-500 group-hover:text-white transition-colors">
+                  {c.icon}
+                </div>
+                <div>
+                  <p className="text-[13px] font-medium text-light-800">{c.title}</p>
+                  <p className="text-[11px] text-light-400">{c.desc}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* === IT-Firma.no banner === */}
+      <section className="bg-dark-950 border-t border-dark-700/30">
+        <div className="max-w-wide mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <div className="w-5 h-5 rounded bg-gradient-to-br from-pulse-500 to-pulse-600 flex items-center justify-center">
+              <IconBolt size={10} className="text-white" />
+            </div>
+            <p className="text-[13px] text-light-500">
+              <span className="text-white font-medium">elbil.io</span> er utviklet av{' '}
+              <a href="https://it-firma.no" target="_blank" rel="noopener noreferrer" className="text-pulse-400 hover:text-pulse-300 font-medium transition-colors">
+                IT-Firma.no
+              </a>
+            </p>
+          </div>
+          <p className="text-[11px] text-light-700">Uavhengig informasjon for norske elbileiere</p>
         </div>
       </section>
     </>
