@@ -10,9 +10,9 @@ export default function PillarHub({ breadcrumbName, h1, directAnswer, updatedAt,
 }) {
   return (
     <>
-      <div className="bg-brand-700 text-white">
+      <div className="bg-[#0c1420] text-white">
         <div className="max-w-site mx-auto px-6 py-12">
-          <nav className="mb-4"><ol className="flex items-center gap-2 text-sm text-brand-200">
+          <nav className="mb-4"><ol className="flex items-center gap-2 text-sm text-gray-400">
             <li><Link href="/" className="hover:text-white">Hjem</Link></li>
             <li>/</li><li className="text-white font-medium">{breadcrumbName}</li>
           </ol></nav>
@@ -20,7 +20,7 @@ export default function PillarHub({ breadcrumbName, h1, directAnswer, updatedAt,
             <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">{icon}</div>
             <h1 className="font-display text-4xl lg:text-5xl font-medium tracking-tight">{h1}</h1>
           </div>
-          <p className="text-sm text-brand-200">Sist oppdatert: {updatedAt}</p>
+          <p className="text-sm text-gray-400">Sist oppdatert: {updatedAt}</p>
         </div>
       </div>
       <article className="max-w-article mx-auto px-6 py-10">

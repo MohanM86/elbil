@@ -9,14 +9,14 @@ export default function ArticleLayout({ h1, directAnswer, metaTitle, breadcrumbs
 }) {
   return (
     <>
-      <div className="bg-brand-700 text-white">
+      <div className="bg-[#0c1420] text-white">
         <div className="max-w-site mx-auto px-6 py-10">
-          <nav className="mb-4"><ol className="flex items-center gap-2 text-sm text-brand-200">
+          <nav className="mb-4"><ol className="flex items-center gap-2 text-sm text-gray-400">
             <li><Link href="/" className="hover:text-white">Hjem</Link></li>
             {breadcrumbs.map(c => <li key={c.href} className="flex items-center gap-2"><span>/</span><Link href={c.href} className="hover:text-white">{c.name}</Link></li>)}
           </ol></nav>
           <h1 className="font-display text-3xl lg:text-4xl font-medium tracking-tight mb-2">{h1}</h1>
-          <p className="text-sm text-brand-200">Sist oppdatert: {updatedAt}</p>
+          <p className="text-sm text-gray-400">Sist oppdatert: {updatedAt}</p>
         </div>
       </div>
       <article className="max-w-article mx-auto px-6 py-10">

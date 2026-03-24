@@ -106,21 +106,21 @@ export default function HomePage() {
   return (
     <>
       {/* ══════ HERO ══════ */}
-      <section className="bg-brand-700 text-white">
+      <section className="bg-[#0c1420] text-white">
         <div className="max-w-site mx-auto px-6 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
-            <p className="anim-up text-sm tracking-widest text-brand-200 font-medium mb-4 uppercase">Norges største elbilguide · 2026</p>
+            <p className="anim-up text-sm tracking-widest text-gray-400 font-medium mb-4 uppercase">Norges største elbilguide · 2026</p>
             <h1 className="anim-up d1 font-display text-5xl lg:text-6xl font-medium leading-[1.08] tracking-tight text-white mb-6">
               Alt du trenger å vite<br />om elbil i Norge
             </h1>
-            <p className="anim-up d2 text-lg text-brand-100 leading-relaxed mb-10 max-w-lg">
+            <p className="anim-up d2 text-lg text-gray-300 leading-relaxed mb-10 max-w-lg">
               Finn svar på spørsmålene dine om lading, kostnader, rekkevidde og modeller. Vi samler alt på ett sted, oppdatert og skrevet for norske forhold.
             </p>
             <div className="anim-up d3 flex flex-wrap gap-4">
-              <Link href="/elbil" className="inline-flex items-center gap-2 bg-white text-brand-700 px-7 py-3.5 rounded-full text-base font-semibold hover:bg-brand-50 transition-colors">
+              <Link href="/elbil" className="inline-flex items-center gap-2 bg-white text-gray-900 px-7 py-3.5 rounded-full text-base font-semibold hover:bg-brand-50 transition-colors">
                 Se alle temaer <IconArrowRight size={15} />
               </Link>
-              <Link href="/verktoy/ladekalkulator" className="inline-flex items-center gap-2 border-2 border-white/30 text-white px-7 py-3.5 rounded-full text-base font-medium hover:border-white/60 transition-colors">
+              <Link href="/verktoy/ladekalkulator" className="inline-flex items-center gap-2 border-2 border-white/30 text-white px-7 py-3.5 rounded-full text-base font-medium hover:border-white/50 transition-colors">
                 Les guider
               </Link>
             </div>
@@ -130,34 +130,34 @@ export default function HomePage() {
             <div className="grid grid-cols-2 gap-4">
               <div ref={c1.ref} className="bg-white/10 border border-white/15 rounded-2xl p-5">
                 <p className="text-3xl font-bold text-white">{c1.val}+</p>
-                <p className="text-brand-200 text-sm mt-1">Artikler</p>
+                <p className="text-gray-400 text-sm mt-1">Artikler</p>
               </div>
               <div ref={c2.ref} className="bg-white/10 border border-white/15 rounded-2xl p-5">
                 <p className="text-3xl font-bold text-white">{c2.val}</p>
-                <p className="text-brand-200 text-sm mt-1">Temaklynger</p>
+                <p className="text-gray-400 text-sm mt-1">Temaklynger</p>
               </div>
               <div className="bg-white/10 border border-white/15 rounded-2xl p-5">
                 <p className="text-3xl font-bold text-white">100%</p>
-                <p className="text-brand-200 text-sm mt-1">Oppdatert 2026</p>
+                <p className="text-gray-400 text-sm mt-1">Oppdatert 2026</p>
               </div>
               <div ref={c3.ref} className="bg-white/10 border border-white/15 rounded-2xl p-5">
                 <p className="text-3xl font-bold text-white">{c3.val}</p>
-                <p className="text-brand-200 text-sm mt-1">Kalkulatorer</p>
+                <p className="text-gray-400 text-sm mt-1">Kalkulatorer</p>
               </div>
             </div>
             {/* Trending */}
             <div className="bg-white/10 border border-white/15 rounded-2xl p-5">
-              <p className="text-xs tracking-widest text-brand-200 font-medium mb-3 uppercase">Mest lest nå</p>
+              <p className="text-xs tracking-widest text-gray-400 font-medium mb-3 uppercase">Mest lest nå</p>
               {trending.map((t, i) => (
                 <Link key={i} href={t.href} className="flex items-center justify-between py-2.5 border-b border-white/10 last:border-0 group">
                   <div className="flex items-center gap-3">
-                    <span className="text-brand-300 text-sm font-medium w-5">{i + 1}</span>
+                    <span className="text-brand-400 text-sm font-medium w-5">{i + 1}</span>
                     <div>
                       <p className="text-white text-[15px] font-medium group-hover:underline">{t.title}</p>
-                      <p className="text-brand-200 text-xs">{t.cat}</p>
+                      <p className="text-gray-400 text-xs">{t.cat}</p>
                     </div>
                   </div>
-                  <IconArrowRight size={14} className="text-brand-300 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <IconArrowRight size={14} className="text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               ))}
             </div>
