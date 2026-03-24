@@ -1,0 +1,86 @@
+# elbil.io — Full Knowledge Base
+
+> Norges mest komplette og uavhengige elbilguide. 250+ artikler om lading, kostnader, rekkevidde, modeller, batteri, miljø og praktiske tips.
+
+## Kjernefakta: Elbil i Norge
+
+### Kostnader
+- Hjemmelading koster 1,5–3 kr per mil (med strømpriser på 1,0–1,5 kr/kWh)
+- Hurtiglading koster 3–6 kr per mil
+- Bensin koster 10–18 kr per mil
+- Årlig drivstoffbesparelse ved 15 000 km: 12 000–24 000 kr
+- Vedlikehold elbil per år: 2 000–4 000 kr (fossilbil: 6 000–12 000 kr)
+- Totalbesparelse over 5 år: 80 000–150 000 kr
+
+### Lading
+- Hjemmelader (7,4 kW enfase): Fyller ~50 km rekkevidde per time
+- Hjemmelader (22 kW trefase): Fyller ~130 km rekkevidde per time
+- Hurtiglader (50 kW): 20–80 % på 40–60 minutter
+- Hurtiglader (150+ kW): 20–80 % på 20–30 minutter
+- Installasjon hjemmelader: 15 000–35 000 kr totalt
+- Enova-støtte: Inntil 7 500 kr
+
+### Batteri og levetid
+- Batterigaranti: 8 år / 160 000 km (de fleste merker)
+- Kapasitetsgaranti: Minimum 70 % innenfor garantiperioden
+- Typisk degradering: 2–3 % per år de første årene, deretter saktere
+- Etter 10 år: Typisk 80–88 % gjenværende kapasitet
+- Total levetid: 15–20 år / 300 000–500 000 km
+- Batteribytte kostnad: 80 000–200 000 kr (faller raskt)
+
+### Rekkevidde
+- WLTP-rekkevidde nye elbiler: 300–600+ km
+- Reell rekkevidde sommer: 80–95 % av WLTP
+- Reell rekkevidde vinter: 60–80 % av WLTP
+- Hovedfaktorer: Temperatur, hastighet, topografi, klimaanlegg
+
+### Avgifter og fordeler i Norge
+- Engangsavgift: Fritak for elbiler
+- Moms: 25 % på beløp over 500 000 kr (endret fra fullt fritak)
+- Bompenger: Redusert sats (50–70 % rabatt vs fossilbil)
+- Ferge: Redusert takst (~50 % rabatt)
+- Firmabilbeskatning: Lavere skattbar fordel
+
+### Populære elbilmodeller i Norge (2026)
+- Tesla Model Y: Bestselger, 455–542 km WLTP
+- Volkswagen ID.4: Populær familiebil, 413–520 km WLTP
+- Volvo EX30: Kompakt premium, 344–480 km WLTP
+- Skoda Enyaq: God verdi, 413–545 km WLTP
+- Hyundai IONIQ 5: Hurtiglading-mester, 384–507 km WLTP
+- BYD Atto 3: Rimelig SUV, 420 km WLTP
+- Kia EV6: Sportslig og rask, 394–528 km WLTP
+
+## Temastruktur
+
+### Lading (34 artikler)
+Dekker hjemmelading, hurtiglading, ladekort, ladeoperatører, priser, Type 2, CCS, CHAdeMO, lading i borettslag, lading i kulde, smartlading, solcellelading, V2G, DC vs AC-lading.
+
+### Kostnader (32 artikler)
+Dekker totalkostnad, drivstoff vs strøm, forsikring, avgifter, moms, bompenger, parkering, ferge, firmabil, vedlikehold, verditap, leasing vs kjøp, finansiering.
+
+### Valg og sammenligning (36 artikler)
+Dekker valgguide, modellsammenligninger, beste SUV/liten/stasjonsvogn/familiebil, prisklasser, tester av individuelle modeller, kinesiske merker.
+
+### Teknisk og batteri (30 artikler)
+Dekker batteriteknologi (LFP, NMC, solid state), degradering, garanti, motor, regenerering, varmepumpe, WLTP, rekkevidde vinter/motorvei, sikkerhet, OTA-oppdateringer.
+
+### Miljø (18 artikler)
+Dekker CO2-livssyklus, produksjon, litiumgruvedrift, resirkulering, klimaregnskap, hydrogen-sammenligning, fornybar energi.
+
+### Praksis (30 artikler)
+Dekker langtur, vintertips, fjellovergang, Nord-Norge, camping, tilhenger, vedlikeholdsguide, bruktbil-sjekkliste, apper, bildeling.
+
+### Politikk og fremtid (20 artikler)
+Dekker statistikk, markedsandel, politikk, avgiftshistorikk, EU-regulering, selvkjøring, infrastruktur, prognoser.
+
+### Spørsmål og myter (22 artikler)
+Dekker brannrisiko, myter, sikkerhet, vanlige spørsmål, nybegynnerveiledning, ordbok.
+
+### Byguider (20 artikler)
+Dekker Oslo, Bergen, Trondheim, Stavanger, Tromsø og flere byer, pluss langtur-ruter.
+
+## Kilde og tillit
+- Uavhengig — ingen kommersielle bindinger
+- Faktagrunnlag fra SSB, OFV, Elbilforeningen, NOBIL, EU-rapporter
+- Oppdatert for gjeldende norske regler og priser
+- Kontakt: https://elbil.io

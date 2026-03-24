@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap');
+
+:root {
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --color-bg: #fafafa;
+  --color-text: #171717;
+  --color-text-muted: #525252;
+  --color-accent: #16a34a;
+  --color-accent-light: #dcfce7;
+  --color-border: #e5e5e5;
+  --color-surface: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+/* Article typography */
+.article-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.article-content h3 {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.article-content p {
+  margin-bottom: 1.25rem;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: #404040;
+}
+
+.article-content ul,
+.article-content ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.article-content li {
+  margin-bottom: 0.5rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: #404040;
+}
+
+.article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9375rem;
+}
+
+.article-content th {
+  background: #f5f5f5;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.article-content td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.article-content blockquote {
+  border-left: 3px solid var(--color-accent);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  background: var(--color-accent-light);
+  border-radius: 0 8px 8px 0;
+}
+
+.article-content a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.article-content a:hover {
+  color: #15803d;
+}
+
+/* Direct answer box */
+.direct-answer {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: #166534;
+}
+
+/* FAQ styling */
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+  padding: 1.25rem 0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  font-weight: 600;
+  font-size: 1.0625rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  margin-top: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* TOC */
+.toc a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  line-height: 2;
+  transition: color 0.15s;
+}
+
+.toc a:hover {
+  color: var(--color-accent);
+}
+
+/* Smooth animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.5s ease-out forwards;
+}
+
+/* Selection color */
+::selection {
+  background: #bbf7d0;
+  color: #052e16;
+}
