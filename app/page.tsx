@@ -52,15 +52,15 @@ export default function HomePage() {
           {/* Badge */}
           <div className="anim-up inline-flex items-center gap-2 bg-pulse-500/10 border border-pulse-500/20 rounded-full px-4 py-1.5 mb-6">
             <div className="w-1.5 h-1.5 rounded-full bg-pulse-500" />
-            <span className="text-[11px] text-pulse-400 tracking-wide font-medium">Norges elbilguide — 2026</span>
+            <span className="text-[13px] text-pulse-400 tracking-wide font-medium">Norges elbilguide — 2026</span>
           </div>
 
-          <h1 className="anim-up anim-delay-1 font-display text-[clamp(2.5rem,6vw,4.5rem)] text-white leading-[1.05] tracking-tight mb-5 max-w-2xl">
+          <h1 className="anim-up anim-delay-1 font-display text-[clamp(3rem,7vw,5.5rem)] text-white leading-[1.05] tracking-tight mb-6 max-w-3xl">
             Elbil forklart. <br />
             <span className="text-pulse-400">Enkelt og uavhengig.</span>
           </h1>
 
-          <p className="anim-up anim-delay-2 text-[15px] sm:text-base text-light-500 max-w-lg leading-relaxed mb-8">
+          <p className="anim-up anim-delay-2 text-lg sm:text-xl text-light-500 max-w-xl leading-relaxed mb-10">
             250+ artikler. 3 interaktive kalkulatorer. Null salg, null affiliate.
             Kun informasjon du kan stole pa.
           </p>
@@ -68,13 +68,13 @@ export default function HomePage() {
           <div className="anim-up anim-delay-3 flex flex-wrap gap-3">
             <Link
               href="/elbil"
-              className="inline-flex items-center gap-2 bg-pulse-500 hover:bg-pulse-400 text-dark-900 px-5 py-2.5 rounded-lg text-[13px] font-semibold transition-colors"
+              className="inline-flex items-center gap-2 bg-pulse-500 hover:bg-pulse-400 text-dark-900 px-7 py-3.5 rounded-xl text-base font-semibold transition-colors"
             >
               Utforsk guiden <IconArrowRight size={13} />
             </Link>
             <Link
               href="/verktoy/ladekalkulator"
-              className="inline-flex items-center gap-2 border border-dark-500 hover:border-light-500 text-light-300 hover:text-white px-5 py-2.5 rounded-lg text-[13px] font-medium transition-colors"
+              className="inline-flex items-center gap-2 border border-dark-500 hover:border-light-500 text-light-300 hover:text-white px-7 py-3.5 rounded-xl text-base font-medium transition-colors"
             >
               Kalkulatorer
             </Link>
@@ -88,8 +88,8 @@ export default function HomePage() {
               { value: '100%', label: 'Uavhengig' },
             ].map((s) => (
               <div key={s.label}>
-                <p className="text-xl sm:text-2xl font-semibold text-pulse-400 tracking-tight">{s.value}</p>
-                <p className="text-[11px] text-light-600 uppercase tracking-wider mt-1">{s.label}</p>
+                <p className="text-3xl sm:text-4xl font-semibold text-pulse-400 tracking-tight">{s.value}</p>
+                <p className="text-[17px] text-light-600 uppercase tracking-wider mt-1">{s.label}</p>
               </div>
             ))}
           </div>
@@ -99,8 +99,8 @@ export default function HomePage() {
       {/* === LIGHT: TOPIC GRID === */}
       <section className="bg-light-50">
         <div className="max-w-wide mx-auto px-4 sm:px-6 py-16 sm:py-24">
-          <p className="text-[10px] uppercase tracking-[0.2em] text-light-400 font-medium mb-3">Utforsk</p>
-          <h2 className="font-display text-2xl sm:text-3xl tracking-tight mb-10">Hovedtemaer</h2>
+          <p className="text-[16px] uppercase tracking-[0.2em] text-light-400 font-medium mb-3">Utforsk</p>
+          <h2 className="font-display text-3xl sm:text-4xl tracking-tight mb-10">Hovedtemaer</h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {pillars.map((p) => (
@@ -113,8 +113,8 @@ export default function HomePage() {
                   {p.icon}
                 </div>
                 <div>
-                  <p className="text-[14px] font-medium text-light-900 group-hover:text-pulse-700 transition-colors">{p.title}</p>
-                  <p className="text-[12px] text-light-400 mt-0.5">{p.desc}</p>
+                  <p className="text-[17px] font-medium text-light-900 group-hover:text-pulse-700 transition-colors">{p.title}</p>
+                  <p className="text-[16px] text-light-400 mt-0.5">{p.desc}</p>
                 </div>
               </Link>
             ))}
@@ -126,8 +126,8 @@ export default function HomePage() {
       <section className="bg-dark-900 relative overflow-hidden">
         <div className="absolute inset-0 grid-bg" />
         <div className="relative max-w-wide mx-auto px-4 sm:px-6 py-16 sm:py-24">
-          <p className="text-[10px] uppercase tracking-[0.2em] text-pulse-500 font-medium mb-3">Gratis verktoy</p>
-          <h2 className="font-display text-2xl sm:text-3xl text-white tracking-tight mb-10">Interaktive kalkulatorer</h2>
+          <p className="text-[16px] uppercase tracking-[0.2em] text-pulse-500 font-medium mb-3">Gratis verktoy</p>
+          <h2 className="font-display text-3xl sm:text-4xl text-white tracking-tight mb-10">Interaktive kalkulatorer</h2>
 
           <div className="grid sm:grid-cols-3 gap-3">
             {tools.map((t) => (
@@ -139,8 +139,8 @@ export default function HomePage() {
                 <div className="w-10 h-10 rounded-lg bg-dark-700 text-pulse-500 flex items-center justify-center mb-3 group-hover:bg-pulse-600 group-hover:text-white transition-colors">
                   {t.icon}
                 </div>
-                <p className="text-[14px] font-medium text-light-200 mb-1">{t.title}</p>
-                <p className="text-[12px] text-light-500">{t.desc}</p>
+                <p className="text-[17px] font-medium text-light-200 mb-1">{t.title}</p>
+                <p className="text-[16px] text-light-500">{t.desc}</p>
               </Link>
             ))}
           </div>
@@ -150,8 +150,8 @@ export default function HomePage() {
       {/* === LIGHT: POPULAR ARTICLES === */}
       <section className="bg-white border-t border-light-200">
         <div className="max-w-wide mx-auto px-4 sm:px-6 py-16 sm:py-20">
-          <p className="text-[10px] uppercase tracking-[0.2em] text-light-400 font-medium mb-3">Populaert</p>
-          <h2 className="font-display text-2xl sm:text-3xl tracking-tight mb-8">Mest leste artikler</h2>
+          <p className="text-[16px] uppercase tracking-[0.2em] text-light-400 font-medium mb-3">Populaert</p>
+          <h2 className="font-display text-3xl sm:text-4xl tracking-tight mb-8">Mest leste artikler</h2>
 
           <div className="grid sm:grid-cols-2 gap-2">
             {popularArticles.map((a) => (
@@ -161,7 +161,7 @@ export default function HomePage() {
                 className="flex items-center gap-3 p-3.5 rounded-xl border border-light-200 hover:border-pulse-300 hover:bg-pulse-50/30 transition-all group"
               >
                 <div className="pulse-dot" />
-                <span className="text-[13px] text-light-700 group-hover:text-light-900 font-medium">{a.title}</span>
+                <span className="text-[17px] text-light-700 group-hover:text-light-900 font-medium">{a.title}</span>
                 <IconArrowRight size={12} className="ml-auto text-light-300 group-hover:text-pulse-500 shrink-0 transition-colors" />
               </Link>
             ))}
@@ -183,8 +183,8 @@ export default function HomePage() {
                   {c.icon}
                 </div>
                 <div>
-                  <p className="text-[13px] font-medium text-light-800">{c.title}</p>
-                  <p className="text-[11px] text-light-400">{c.desc}</p>
+                  <p className="text-[17px] font-medium text-light-800">{c.title}</p>
+                  <p className="text-[17px] text-light-400">{c.desc}</p>
                 </div>
               </Link>
             ))}
@@ -199,14 +199,14 @@ export default function HomePage() {
             <div className="w-5 h-5 rounded bg-gradient-to-br from-pulse-500 to-pulse-600 flex items-center justify-center">
               <IconBolt size={10} className="text-white" />
             </div>
-            <p className="text-[13px] text-light-500">
+            <p className="text-[17px] text-light-500">
               <span className="text-white font-medium">elbil.io</span> er utviklet av{' '}
               <a href="https://it-firma.no" target="_blank" rel="noopener noreferrer" className="text-pulse-400 hover:text-pulse-300 font-medium transition-colors">
                 IT-Firma.no
               </a>
             </p>
           </div>
-          <p className="text-[11px] text-light-700">Uavhengig informasjon for norske elbileiere</p>
+          <p className="text-[17px] text-light-700">Uavhengig informasjon for norske elbileiere</p>
         </div>
       </section>
     </>

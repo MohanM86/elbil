@@ -61,7 +61,7 @@ export default function BesparelsesKalkulator() {
       {/* Inputs */}
       <div className="space-y-6">
         <div>
-          <div className="flex justify-between text-sm mb-2">
+          <div className="flex justify-between text-base mb-2">
             <span className="font-medium text-surface-700">Kjørelengde per år</span>
             <span className="font-semibold text-surface-900">{formatKr(kmPerYear)} km</span>
           </div>
@@ -70,7 +70,7 @@ export default function BesparelsesKalkulator() {
         </div>
 
         <div>
-          <div className="flex justify-between text-sm mb-2">
+          <div className="flex justify-between text-base mb-2">
             <span className="font-medium text-surface-700">Strømpris (kr/kWh)</span>
             <span className="font-semibold text-surface-900">{electricityPrice.toFixed(2)} kr</span>
           </div>
@@ -79,7 +79,7 @@ export default function BesparelsesKalkulator() {
         </div>
 
         <div>
-          <div className="flex justify-between text-sm mb-2">
+          <div className="flex justify-between text-base mb-2">
             <span className="font-medium text-surface-700">Bensinpris (kr/liter)</span>
             <span className="font-semibold text-surface-900">{petrolPrice.toFixed(0)} kr</span>
           </div>
@@ -88,17 +88,17 @@ export default function BesparelsesKalkulator() {
         </div>
 
         <div>
-          <div className="flex justify-between text-sm mb-2">
+          <div className="flex justify-between text-base mb-2">
             <span className="font-medium text-surface-700">Bompenger per måned (fossilbil)</span>
             <span className="font-semibold text-surface-900">{formatKr(bomPerMonth)} kr</span>
           </div>
           <input type="range" min={0} max={5000} step={100} value={bomPerMonth}
             onChange={(e) => setBomPerMonth(Number(e.target.value))} className="w-full accent-primary-600" />
-          <p className="text-xs text-surface-400 mt-1">Sett til 0 om du ikke kjører gjennom bomring</p>
+          <p className="text-sm text-surface-400 mt-1">Sett til 0 om du ikke kjører gjennom bomring</p>
         </div>
 
         <div>
-          <div className="flex justify-between text-sm mb-2">
+          <div className="flex justify-between text-base mb-2">
             <span className="font-medium text-surface-700">Beregningsperiode</span>
             <span className="font-semibold text-surface-900">{years} år</span>
           </div>
@@ -110,7 +110,7 @@ export default function BesparelsesKalkulator() {
           <input type="checkbox" checked={hasFirmabil}
             onChange={(e) => setHasFirmabil(e.target.checked)}
             className="w-5 h-5 rounded border-surface-300 text-primary-600 focus:ring-primary-500" />
-          <span className="text-sm font-medium text-surface-700">Firmabil (inkluder skattefordel)</span>
+          <span className="text-base font-medium text-surface-700">Firmabil (inkluder skattefordel)</span>
         </label>
       </div>
 
@@ -119,18 +119,18 @@ export default function BesparelsesKalkulator() {
         <h3 className="font-display text-xl text-surface-900">Besparelse over {years} år</h3>
 
         <div className="bg-white rounded-xl p-5 border-2 border-primary-300 text-center">
-          <p className="text-xs text-surface-500 uppercase tracking-wide mb-1">Total besparelse med elbil</p>
-          <p className="text-4xl font-bold text-primary-700">
+          <p className="text-sm text-surface-500 uppercase tracking-wide mb-1">Total besparelse med elbil</p>
+          <p className="text-5xl font-bold text-primary-700">
             {formatKr(hasFirmabil ? results.totalWithFirmabil : results.totalDiff)} kr
           </p>
-          <p className="text-sm text-surface-500 mt-1">
+          <p className="text-base text-surface-500 mt-1">
             {formatKr(results.yearlyDiff + (hasFirmabil ? 18000 : 0))} kr per år
           </p>
         </div>
 
         {/* Breakdown */}
         <div className="space-y-2">
-          <p className="text-xs text-surface-500 uppercase tracking-wide">Fordelt på kategorier</p>
+          <p className="text-sm text-surface-500 uppercase tracking-wide">Fordelt på kategorier</p>
           {[
             { label: 'Drivstoff', value: results.fuelSaving, color: 'bg-primary-500' },
             { label: 'Bompenger', value: results.bomSaving, color: 'bg-primary-400' },
@@ -142,7 +142,7 @@ export default function BesparelsesKalkulator() {
             const pct = total > 0 ? Math.round((item.value / total) * 100) : 0
             return (
               <div key={item.label} className="bg-white rounded-lg p-3">
-                <div className="flex justify-between text-sm mb-1.5">
+                <div className="flex justify-between text-base mb-1.5">
                   <span className="text-surface-600">{item.label}</span>
                   <span className="font-semibold">{formatKr(item.value)} kr</span>
                 </div>
@@ -157,16 +157,16 @@ export default function BesparelsesKalkulator() {
         {/* Side by side */}
         <div className="grid grid-cols-2 gap-3">
           <div className="bg-white rounded-xl p-4 text-center">
-            <p className="text-xs text-surface-500 uppercase tracking-wide mb-1">Elbil/år</p>
-            <p className="text-lg font-semibold text-primary-700">{formatKr(results.evYearlyCost)} kr</p>
+            <p className="text-sm text-surface-500 uppercase tracking-wide mb-1">Elbil/år</p>
+            <p className="text-xl font-semibold text-primary-700">{formatKr(results.evYearlyCost)} kr</p>
           </div>
           <div className="bg-white rounded-xl p-4 text-center">
-            <p className="text-xs text-surface-500 uppercase tracking-wide mb-1">Bensinbil/år</p>
-            <p className="text-lg font-semibold text-red-600">{formatKr(results.fossilYearlyCost)} kr</p>
+            <p className="text-sm text-surface-500 uppercase tracking-wide mb-1">Bensinbil/år</p>
+            <p className="text-xl font-semibold text-red-600">{formatKr(results.fossilYearlyCost)} kr</p>
           </div>
         </div>
 
-        <p className="text-xs text-surface-400">
+        <p className="text-sm text-surface-400">
           Beregningene er estimater basert på gjennomsnittlig forbruk (1,7 kWh/mil elbil, 0,7 l/mil bensin),
           typiske vedlikeholdskostnader og gjeldende bompengesatser. Kilde: SSB, OFV, Statens vegvesen.
         </p>

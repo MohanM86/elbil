@@ -66,7 +66,7 @@ export default function LadekostKalkulator() {
     <div className="space-y-8">
       {/* Car selection */}
       <div>
-        <label className="block text-sm font-medium text-surface-700 mb-2">
+        <label className="block text-base font-medium text-surface-700 mb-2">
           Velg elbil
         </label>
         <select
@@ -83,7 +83,7 @@ export default function LadekostKalkulator() {
       {isCustom && (
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-surface-700 mb-2">
+            <label className="block text-base font-medium text-surface-700 mb-2">
               Batterikapasitet (kWh)
             </label>
             <input
@@ -94,7 +94,7 @@ export default function LadekostKalkulator() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-surface-700 mb-2">
+            <label className="block text-base font-medium text-surface-700 mb-2">
               Forbruk (kWh/mil)
             </label>
             <input
@@ -111,7 +111,7 @@ export default function LadekostKalkulator() {
       {/* Sliders */}
       <div className="space-y-6">
         <div>
-          <div className="flex justify-between text-sm mb-2">
+          <div className="flex justify-between text-base mb-2">
             <span className="font-medium text-surface-700">Kjørelengde per år</span>
             <span className="font-semibold text-surface-900">{kmPerYear.toLocaleString('nb-NO')} km</span>
           </div>
@@ -124,13 +124,13 @@ export default function LadekostKalkulator() {
             onChange={(e) => setKmPerYear(Number(e.target.value))}
             className="w-full accent-primary-600"
           />
-          <div className="flex justify-between text-xs text-surface-400 mt-1">
+          <div className="flex justify-between text-sm text-surface-400 mt-1">
             <span>5 000</span><span>40 000</span>
           </div>
         </div>
 
         <div>
-          <div className="flex justify-between text-sm mb-2">
+          <div className="flex justify-between text-base mb-2">
             <span className="font-medium text-surface-700">Strømpris hjemme (kr/kWh)</span>
             <span className="font-semibold text-surface-900">{electricityPrice.toFixed(2)} kr</span>
           </div>
@@ -143,13 +143,13 @@ export default function LadekostKalkulator() {
             onChange={(e) => setElectricityPrice(Number(e.target.value))}
             className="w-full accent-primary-600"
           />
-          <div className="flex justify-between text-xs text-surface-400 mt-1">
+          <div className="flex justify-between text-sm text-surface-400 mt-1">
             <span>0,50 kr</span><span>4,00 kr</span>
           </div>
         </div>
 
         <div>
-          <div className="flex justify-between text-sm mb-2">
+          <div className="flex justify-between text-base mb-2">
             <span className="font-medium text-surface-700">Hurtigladepris (kr/kWh)</span>
             <span className="font-semibold text-surface-900">{fastChargePrice.toFixed(2)} kr</span>
           </div>
@@ -162,13 +162,13 @@ export default function LadekostKalkulator() {
             onChange={(e) => setFastChargePrice(Number(e.target.value))}
             className="w-full accent-primary-600"
           />
-          <div className="flex justify-between text-xs text-surface-400 mt-1">
+          <div className="flex justify-between text-sm text-surface-400 mt-1">
             <span>3,00 kr</span><span>10,00 kr</span>
           </div>
         </div>
 
         <div>
-          <div className="flex justify-between text-sm mb-2">
+          <div className="flex justify-between text-base mb-2">
             <span className="font-medium text-surface-700">Andel hjemmelading</span>
             <span className="font-semibold text-surface-900">{homeChargePercent} %</span>
           </div>
@@ -181,7 +181,7 @@ export default function LadekostKalkulator() {
             onChange={(e) => setHomeChargePercent(Number(e.target.value))}
             className="w-full accent-primary-600"
           />
-          <div className="flex justify-between text-xs text-surface-400 mt-1">
+          <div className="flex justify-between text-sm text-surface-400 mt-1">
             <span>0 % (kun hurtig)</span><span>100 % (kun hjemme)</span>
           </div>
         </div>
@@ -193,26 +193,26 @@ export default function LadekostKalkulator() {
 
         <div className="grid grid-cols-2 gap-4">
           <div className="bg-white rounded-xl p-4">
-            <p className="text-xs text-surface-500 uppercase tracking-wide mb-1">Total ladekostnad/år</p>
-            <p className="text-2xl font-semibold text-surface-900">
-              {results.totalCost.toLocaleString('nb-NO')} <span className="text-sm font-normal">kr</span>
+            <p className="text-sm text-surface-500 uppercase tracking-wide mb-1">Total ladekostnad/år</p>
+            <p className="text-5xl font-semibold text-surface-900">
+              {results.totalCost.toLocaleString('nb-NO')} <span className="text-base font-normal">kr</span>
             </p>
           </div>
           <div className="bg-white rounded-xl p-4">
-            <p className="text-xs text-surface-500 uppercase tracking-wide mb-1">Kostnad per mil</p>
-            <p className="text-2xl font-semibold text-surface-900">
-              {results.costPerMil} <span className="text-sm font-normal">kr</span>
+            <p className="text-sm text-surface-500 uppercase tracking-wide mb-1">Kostnad per mil</p>
+            <p className="text-5xl font-semibold text-surface-900">
+              {results.costPerMil} <span className="text-base font-normal">kr</span>
             </p>
           </div>
           <div className="bg-white rounded-xl p-4">
-            <p className="text-xs text-surface-500 uppercase tracking-wide mb-1">Hjemmelading</p>
-            <p className="text-lg font-semibold text-surface-900">
+            <p className="text-sm text-surface-500 uppercase tracking-wide mb-1">Hjemmelading</p>
+            <p className="text-xl font-semibold text-surface-900">
               {results.homeCost.toLocaleString('nb-NO')} kr
             </p>
           </div>
           <div className="bg-white rounded-xl p-4">
-            <p className="text-xs text-surface-500 uppercase tracking-wide mb-1">Hurtiglading</p>
-            <p className="text-lg font-semibold text-surface-900">
+            <p className="text-sm text-surface-500 uppercase tracking-wide mb-1">Hurtiglading</p>
+            <p className="text-xl font-semibold text-surface-900">
               {results.fastCost.toLocaleString('nb-NO')} kr
             </p>
           </div>
@@ -220,19 +220,19 @@ export default function LadekostKalkulator() {
 
         {/* Savings comparison */}
         <div className="bg-white rounded-xl p-4 border-2 border-primary-300">
-          <p className="text-xs text-surface-500 uppercase tracking-wide mb-2">Besparelse vs bensinbil</p>
+          <p className="text-sm text-surface-500 uppercase tracking-wide mb-2">Besparelse vs bensinbil</p>
           <div className="flex items-end gap-2">
-            <p className="text-3xl font-bold text-primary-700">
+            <p className="text-5xl font-bold text-primary-700">
               {results.saving.toLocaleString('nb-NO')} kr
             </p>
-            <p className="text-sm text-primary-600 mb-1">per år ({results.savingPercent} % billigere)</p>
+            <p className="text-base text-primary-600 mb-1">per år ({results.savingPercent} % billigere)</p>
           </div>
-          <div className="mt-3 flex gap-3 text-xs text-surface-500">
+          <div className="mt-3 flex gap-3 text-sm text-surface-500">
             <span>Elbil: {results.totalCost.toLocaleString('nb-NO')} kr/år</span>
             <span>•</span>
             <span>Bensin: {results.petrolCostYear.toLocaleString('nb-NO')} kr/år</span>
           </div>
-          <p className="text-xs text-surface-400 mt-2">
+          <p className="text-sm text-surface-400 mt-2">
             Bensinberegning: 0,7 l/mil, 20 kr/liter. Kilde: SSB gjennomsnittspriser.
           </p>
         </div>

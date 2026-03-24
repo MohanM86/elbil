@@ -61,13 +61,13 @@ export default function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-8">
           {footerColumns.map((col) => (
             <div key={col.title}>
-              <p className="text-[10px] uppercase tracking-[0.15em] text-light-600 font-medium mb-3">
+              <p className="text-[16px] uppercase tracking-[0.15em] text-light-600 font-medium mb-3">
                 {col.title}
               </p>
               <ul className="space-y-2">
                 {col.links.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-[13px] text-light-500 hover:text-white transition-colors">
+                    <Link href={link.href} className="text-[17px] text-light-500 hover:text-white transition-colors">
                       {link.name}
                     </Link>
                   </li>
@@ -86,15 +86,15 @@ export default function Footer() {
               <IconBolt size={11} className="text-white" />
             </div>
             <div>
-              <span className="text-[13px] text-white font-medium">elbil.io</span>
-              <span className="text-[13px] text-light-600 mx-2">|</span>
-              <span className="text-[12px] text-light-600">En tjeneste fra </span>
-              <a href="https://it-firma.no" target="_blank" rel="noopener noreferrer" className="text-[12px] text-light-400 hover:text-pulse-400 transition-colors font-medium">
+              <span className="text-[17px] text-white font-medium">elbil.io</span>
+              <span className="text-[17px] text-light-600 mx-2">|</span>
+              <span className="text-[16px] text-light-600">En tjeneste fra </span>
+              <a href="https://it-firma.no" target="_blank" rel="noopener noreferrer" className="text-[16px] text-light-400 hover:text-pulse-400 transition-colors font-medium">
                 IT-Firma.no
               </a>
             </div>
           </div>
-          <p className="text-[11px] text-light-700">
+          <p className="text-[17px] text-light-700">
             Uavhengig elbilguide for Norge. Ingen salg, ingen affiliate, kun informasjon.
           </p>
         </div>

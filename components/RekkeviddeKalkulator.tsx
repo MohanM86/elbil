@@ -78,7 +78,7 @@ export default function RekkeviddeKalkulator() {
     <div className="space-y-8">
       {/* Car */}
       <div>
-        <label className="block text-sm font-medium text-surface-700 mb-2">Velg elbil</label>
+        <label className="block text-base font-medium text-surface-700 mb-2">Velg elbil</label>
         <select
           value={selectedCar}
           onChange={(e) => setSelectedCar(Number(e.target.value))}
@@ -92,7 +92,7 @@ export default function RekkeviddeKalkulator() {
 
       {isCustom && (
         <div>
-          <label className="block text-sm font-medium text-surface-700 mb-2">WLTP-rekkevidde (km)</label>
+          <label className="block text-base font-medium text-surface-700 mb-2">WLTP-rekkevidde (km)</label>
           <input type="number" value={customWltp} onChange={(e) => setCustomWltp(Number(e.target.value))}
             className="w-full px-4 py-3 rounded-xl border border-surface-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500" />
         </div>
@@ -100,7 +100,7 @@ export default function RekkeviddeKalkulator() {
 
       {/* Battery level */}
       <div>
-        <div className="flex justify-between text-sm mb-2">
+        <div className="flex justify-between text-base mb-2">
           <span className="font-medium text-surface-700">Batterinivå ved start</span>
           <span className="font-semibold text-surface-900">{batteryPercent} %</span>
         </div>
@@ -110,11 +110,11 @@ export default function RekkeviddeKalkulator() {
 
       {/* Season */}
       <div>
-        <label className="block text-sm font-medium text-surface-700 mb-3">Sesong / temperatur</label>
+        <label className="block text-base font-medium text-surface-700 mb-3">Sesong / temperatur</label>
         <div className="grid grid-cols-2 gap-2">
           {seasons.map((s, i) => (
             <button key={s.id} onClick={() => setSelectedSeason(i)}
-              className={`px-4 py-3 rounded-xl text-sm text-left transition-all ${
+              className={`px-4 py-3 rounded-xl text-base text-left transition-all ${
                 selectedSeason === i
                   ? 'bg-primary-600 text-white font-medium'
                   : 'bg-white border border-surface-200 text-surface-700 hover:border-primary-300'
@@ -127,11 +127,11 @@ export default function RekkeviddeKalkulator() {
 
       {/* Speed */}
       <div>
-        <label className="block text-sm font-medium text-surface-700 mb-3">Kjørehastighet</label>
+        <label className="block text-base font-medium text-surface-700 mb-3">Kjørehastighet</label>
         <div className="grid grid-cols-1 gap-2">
           {speeds.map((s, i) => (
             <button key={s.id} onClick={() => setSelectedSpeed(i)}
-              className={`px-4 py-3 rounded-xl text-sm text-left transition-all ${
+              className={`px-4 py-3 rounded-xl text-base text-left transition-all ${
                 selectedSpeed === i
                   ? 'bg-primary-600 text-white font-medium'
                   : 'bg-white border border-surface-200 text-surface-700 hover:border-primary-300'
@@ -144,7 +144,7 @@ export default function RekkeviddeKalkulator() {
 
       {/* Extras */}
       <div>
-        <label className="block text-sm font-medium text-surface-700 mb-3">Tilleggsfaktorer</label>
+        <label className="block text-base font-medium text-surface-700 mb-3">Tilleggsfaktorer</label>
         <div className="grid grid-cols-2 gap-2">
           {extras.map((ext) => {
             const active = selectedExtras.includes(ext.id)
@@ -153,7 +153,7 @@ export default function RekkeviddeKalkulator() {
                 onClick={() => setSelectedExtras(
                   active ? selectedExtras.filter(e => e !== ext.id) : [...selectedExtras, ext.id]
                 )}
-                className={`px-4 py-3 rounded-xl text-sm text-left transition-all ${
+                className={`px-4 py-3 rounded-xl text-base text-left transition-all ${
                   active
                     ? 'bg-primary-100 border-2 border-primary-400 text-primary-800 font-medium'
                     : 'bg-white border border-surface-200 text-surface-700 hover:border-primary-300'
@@ -171,14 +171,14 @@ export default function RekkeviddeKalkulator() {
 
         <div className="bg-white rounded-xl p-5 border-2 border-primary-300 text-center">
           <p className="text-5xl font-bold text-primary-700">{results.realistic} km</p>
-          <p className="text-sm text-surface-500 mt-2">
+          <p className="text-base text-surface-500 mt-2">
             {results.percentOfWltp} % av WLTP ({results.wltp} km)
           </p>
         </div>
 
         {/* Visual bar */}
         <div className="bg-white rounded-xl p-4">
-          <div className="flex justify-between text-xs text-surface-500 mb-2">
+          <div className="flex justify-between text-sm text-surface-500 mb-2">
             <span>0 km</span>
             <span>WLTP: {results.wltp} km</span>
           </div>
@@ -188,13 +188,13 @@ export default function RekkeviddeKalkulator() {
               style={{ width: `${Math.min(results.percentOfWltp, 100)}%` }}
             />
           </div>
-          <div className="flex gap-4 mt-3 text-xs text-surface-500">
+          <div className="flex gap-4 mt-3 text-sm text-surface-500">
             <span>Sesong: −{results.seasonImpact}%</span>
             <span>Hastighet: {results.speedImpact > 0 ? `−${results.speedImpact}` : `+${Math.abs(results.speedImpact)}`}%</span>
           </div>
         </div>
 
-        <p className="text-xs text-surface-400">
+        <p className="text-sm text-surface-400">
           Estimatene er basert på gjennomsnittlige erfaringstall fra norske elbileiere og NAFs testdata.
           Reell rekkevidde kan variere med kjørestil, topografi og bilens tilstand.
         </p>

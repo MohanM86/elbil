@@ -64,7 +64,7 @@ export default function Header() {
               <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-pulse-500 to-pulse-600 flex items-center justify-center">
                 <IconBolt size={14} className="text-white" />
               </div>
-              <span className="text-[15px] font-medium text-white tracking-tight">elbil.io</span>
+              <span className="text-[17px] font-medium text-white tracking-tight">elbil.io</span>
             </Link>
 
             {/* Desktop nav */}
@@ -74,12 +74,12 @@ export default function Header() {
                   key={label}
                   onMouseEnter={() => setMegaOpen(true)}
                   onClick={() => setMegaOpen(!megaOpen)}
-                  className="px-3 py-1.5 text-[13px] text-light-400 hover:text-white rounded-md transition-colors"
+                  className="px-3 py-1.5 text-[17px] text-light-400 hover:text-white rounded-md transition-colors"
                 >
                   {label}
                 </button>
               ))}
-              <Link href="/om-oss" className="px-3 py-1.5 text-[13px] text-light-500 hover:text-white rounded-md transition-colors">
+              <Link href="/om-oss" className="px-3 py-1.5 text-[17px] text-light-500 hover:text-white rounded-md transition-colors">
                 Om oss
               </Link>
             </nav>
@@ -108,7 +108,7 @@ export default function Header() {
             <div className="grid grid-cols-5 gap-6">
               {megaMenuSections.map((section) => (
                 <div key={section.label}>
-                  <p className="text-[10px] uppercase tracking-[0.15em] text-light-500 mb-3 font-medium">
+                  <p className="text-[16px] uppercase tracking-[0.15em] text-light-500 mb-3 font-medium">
                     {section.label}
                   </p>
                   <div className="space-y-1">
@@ -123,8 +123,8 @@ export default function Header() {
                           {item.icon}
                         </div>
                         <div>
-                          <p className="text-[13px] text-light-200 font-medium leading-tight">{item.title}</p>
-                          <p className="text-[11px] text-light-500 mt-0.5">{item.desc}</p>
+                          <p className="text-[17px] text-light-200 font-medium leading-tight">{item.title}</p>
+                          <p className="text-[17px] text-light-500 mt-0.5">{item.desc}</p>
                         </div>
                       </Link>
                     ))}
@@ -134,10 +134,10 @@ export default function Header() {
             </div>
             {/* IT-Firma badge */}
             <div className="mt-5 pt-4 border-t border-dark-700/30 flex items-center justify-between">
-              <p className="text-[11px] text-light-600">
+              <p className="text-[17px] text-light-600">
                 En tjeneste fra <span className="text-light-400 font-medium">IT-Firma.no</span>
               </p>
-              <Link href="/nytt" className="text-[11px] text-pulse-500 hover:text-pulse-400 flex items-center gap-1">
+              <Link href="/nytt" className="text-[17px] text-pulse-500 hover:text-pulse-400 flex items-center gap-1">
                 Siste oppdateringer <IconArrowRight size={10} />
               </Link>
             </div>
@@ -151,7 +151,7 @@ export default function Header() {
           <div className="px-4 py-4">
             {megaMenuSections.map((section) => (
               <div key={section.label} className="mb-4">
-                <p className="text-[10px] uppercase tracking-[0.15em] text-light-500 mb-2 px-2 font-medium">{section.label}</p>
+                <p className="text-[16px] uppercase tracking-[0.15em] text-light-500 mb-2 px-2 font-medium">{section.label}</p>
                 {section.items.map((item) => (
                   <Link
                     key={item.href}
@@ -163,17 +163,17 @@ export default function Header() {
                       {item.icon}
                     </div>
                     <div>
-                      <p className="text-[13px] text-light-200">{item.title}</p>
-                      <p className="text-[11px] text-light-500">{item.desc}</p>
+                      <p className="text-[17px] text-light-200">{item.title}</p>
+                      <p className="text-[17px] text-light-500">{item.desc}</p>
                     </div>
                   </Link>
                 ))}
               </div>
             ))}
             <div className="border-t border-dark-700/30 pt-3 mt-2">
-              <Link href="/om-oss" onClick={() => setMobileOpen(false)} className="block px-2 py-2 text-[13px] text-light-400">Om oss</Link>
-              <Link href="/slik-jobber-vi" onClick={() => setMobileOpen(false)} className="block px-2 py-2 text-[13px] text-light-400">Slik jobber vi</Link>
-              <p className="px-2 pt-2 text-[11px] text-light-600">En tjeneste fra IT-Firma.no</p>
+              <Link href="/om-oss" onClick={() => setMobileOpen(false)} className="block px-2 py-2 text-[17px] text-light-400">Om oss</Link>
+              <Link href="/slik-jobber-vi" onClick={() => setMobileOpen(false)} className="block px-2 py-2 text-[17px] text-light-400">Slik jobber vi</Link>
+              <p className="px-2 pt-2 text-[17px] text-light-600">En tjeneste fra IT-Firma.no</p>
             </div>
           </div>
         </div>

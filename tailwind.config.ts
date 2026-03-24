@@ -48,8 +48,8 @@ const config: Config = {
         mono: ['var(--font-mono)'],
       },
       maxWidth: {
-        article: '740px',
-        wide: '1200px',
+        article: '900px',
+        wide: '1440px',
       },
       borderRadius: {
         '2xl': '16px',
