@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        pulse: {
+        brand: {
           50: '#f0fdf4',
           100: '#dcfce7',
           200: '#bbf7d0',
@@ -20,40 +20,20 @@ const config: Config = {
           700: '#15803d',
           800: '#166534',
           900: '#14532d',
+          950: '#0b3d1f',
         },
-        dark: {
-          950: '#050505',
-          900: '#0a0a0a',
-          800: '#111111',
-          700: '#1a1a1a',
-          600: '#222222',
-          500: '#333333',
-        },
-        light: {
-          50: '#fafafa',
-          100: '#f5f5f5',
-          200: '#eeeeee',
-          300: '#d4d4d4',
-          400: '#a3a3a3',
-          500: '#737373',
-          600: '#525252',
-          700: '#404040',
-          800: '#262626',
-          900: '#171717',
+        slate: {
+          850: '#1a2332',
+          950: '#0c1420',
         },
       },
       fontFamily: {
         display: ['var(--font-display)'],
         body: ['var(--font-body)'],
-        mono: ['var(--font-mono)'],
       },
       maxWidth: {
-        article: '900px',
-        wide: '1440px',
-      },
-      borderRadius: {
-        '2xl': '16px',
-        '3xl': '20px',
+        site: '1400px',
+        article: '880px',
       },
     },
   },

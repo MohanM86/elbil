@@ -2,105 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap');
 
 :root {
   --font-display: 'Newsreader', Georgia, serif;
   --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  --pulse: #22c55e;
-  --pulse-dim: #16a34a;
-  --pulse-glow: rgba(34, 197, 94, 0.12);
+  --brand: #16a34a;
+  --brand-light: #dcfce7;
+  --dark: #0c1420;
+  --dark-card: #142030;
 }
 
 * { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
 body {
   font-family: var(--font-body);
-  background: #fafafa;
-  color: #171717;
+  background: #fff;
+  color: #1a1a1a;
   font-size: 17px;
-  line-height: 1.75;
+  line-height: 1.7;
 }
 
-::selection {
-  background: rgba(34, 197, 94, 0.2);
-  color: #052e16;
-}
+::selection { background: rgba(22,163,74,.15); color: #14532d; }
 
 /* Animations */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-.anim-up { animation: fadeUp 0.6s ease-out both; }
-.anim-in { animation: fadeIn 0.5s ease-out both; }
-.anim-delay-1 { animation-delay: 0.1s; }
-.anim-delay-2 { animation-delay: 0.2s; }
-.anim-delay-3 { animation-delay: 0.3s; }
-.anim-delay-4 { animation-delay: 0.4s; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(24px) } to { opacity:1; transform:translateY(0) } }
+@keyframes fadeIn { from { opacity:0 } to { opacity:1 } }
+@keyframes slideIn { from { opacity:0; transform:translateX(-16px) } to { opacity:1; transform:translateX(0) } }
+@keyframes countUp { from { opacity:0; transform:translateY(8px) } to { opacity:1; transform:translateY(0) } }
+@keyframes barGrow { from { height:0 } to { height:var(--h) } }
+@keyframes fillWidth { from { width:0 } to { width:var(--w) } }
+@keyframes lineGrow { from { transform:scaleX(0) } to { transform:scaleX(1) } }
 
-/* Grid background for dark sections */
-.grid-bg {
-  background-image:
-    linear-gradient(rgba(34,197,94,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34,197,94,0.04) 1px, transparent 1px);
-  background-size: 48px 48px;
-}
+.anim-up { animation: fadeUp .7s cubic-bezier(.16,1,.3,1) both; }
+.anim-in { animation: fadeIn .6s ease-out both; }
+.anim-slide { animation: slideIn .6s cubic-bezier(.16,1,.3,1) both; }
+.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.4s}
+.d5{animation-delay:.5s}.d6{animation-delay:.6s}.d7{animation-delay:.7s}.d8{animation-delay:.8s}
 
-/* Pulse dot */
-.pulse-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--pulse);
-  flex-shrink: 0;
-}
-
-/* ========== ARTICLE TYPOGRAPHY — SCALED UP ========== */
+/* Article typography */
 .article-content h2 {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 1.875rem;
   font-weight: 500;
   line-height: 1.2;
-  margin-top: 2.75rem;
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
-  color: #171717;
-  letter-spacing: -0.01em;
+  color: #1a1a1a;
 }
 .article-content h3 {
-  font-family: var(--font-body);
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  line-height: 1.3;
   margin-top: 2rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: .75rem;
 }
 .article-content p {
   margin-bottom: 1.25rem;
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
   line-height: 1.85;
-  color: #404040;
+  color: #444;
 }
 .article-content ul, .article-content ol {
   margin-bottom: 1.25rem;
   padding-left: 1.5rem;
 }
 .article-content li {
-  margin-bottom: 0.5rem;
-  font-size: 1.125rem;
+  margin-bottom: .5rem;
+  font-size: 1.0625rem;
   line-height: 1.75;
-  color: #404040;
+  color: #444;
 }
 .article-content table {
   width: 100%;
@@ -109,40 +81,33 @@ body {
   font-size: 1rem;
 }
 .article-content th {
-  background: #f5f5f5;
-  padding: 0.75rem 1rem;
+  background: #f8f8f8;
+  padding: .75rem 1rem;
   text-align: left;
   font-weight: 600;
+  font-size: .875rem;
   border-bottom: 2px solid #e5e5e5;
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: #737373;
+  color: #666;
 }
 .article-content td {
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid #eeeeee;
-  font-size: 1rem;
+  padding: .75rem 1rem;
+  border-bottom: 1px solid #eee;
 }
 .article-content a {
-  color: var(--pulse-dim);
+  color: var(--brand);
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: rgba(22, 163, 74, 0.3);
+  text-decoration-color: rgba(22,163,74,.3);
 }
-.article-content a:hover {
-  text-decoration-color: var(--pulse-dim);
-}
+.article-content a:hover { text-decoration-color: var(--brand); }
 .article-content blockquote {
-  border-left: 3px solid var(--pulse);
+  border-left: 3px solid var(--brand);
   padding: 1rem 1.5rem;
   margin: 1.5rem 0;
-  background: var(--pulse-glow);
-  border-radius: 0 10px 10px 0;
-  font-size: 1.0625rem;
+  background: var(--brand-light);
+  border-radius: 0 12px 12px 0;
 }
 
-/* Direct answer box */
 .direct-answer {
   background: linear-gradient(135deg, #f0fdf4, #dcfce7);
   border: 1px solid #bbf7d0;
@@ -154,21 +119,16 @@ body {
   color: #166534;
 }
 
-/* TOC */
 .toc a {
-  color: #737373;
+  color: #666;
   text-decoration: none;
   font-size: 1rem;
   line-height: 2.2;
-  transition: color 0.15s;
+  transition: color .15s;
 }
-.toc a:hover { color: var(--pulse-dim); }
+.toc a:hover { color: var(--brand); }
 
-/* FAQ */
-.faq-item {
-  border-bottom: 1px solid #eeeeee;
-  padding: 1.125rem 0;
-}
+.faq-item { border-bottom: 1px solid #eee; padding: 1.125rem 0; }
 .faq-item:last-child { border-bottom: none; }
 .faq-question {
   font-weight: 500;
@@ -177,10 +137,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #1a1a1a;
 }
 .faq-answer {
-  margin-top: 0.75rem;
-  color: #525252;
+  margin-top: .75rem;
+  color: #555;
   line-height: 1.75;
   font-size: 1rem;
 }
