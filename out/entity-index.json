@@ -1,0 +1,77 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "elbil.io",
+  "url": "https://elbil.io",
+  "description": "Norges mest komplette og uavhengige guide til elbiler",
+  "inLanguage": "nb",
+  "publisher": {
+    "@type": "Organization",
+    "name": "elbil.io",
+    "url": "https://elbil.io"
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Elbil",
+      "description": "Elektrisk bil, batteridrevet personbil"
+    },
+    {
+      "@type": "Thing",
+      "name": "Elbillading",
+      "description": "Lading av elektriske biler, hjemmelading og hurtiglading"
+    },
+    {
+      "@type": "Thing",
+      "name": "Elbilbatteri",
+      "description": "Litium-ion batteriteknologi for elbiler"
+    },
+    {
+      "@type": "Thing",
+      "name": "Elbilkostnader",
+      "description": "Driftskostnader, avgifter og besparelser ved elbileierskap"
+    },
+    {
+      "@type": "Thing",
+      "name": "Elbilrekkevidde",
+      "description": "Kjørelengde på en lading, WLTP og reell rekkevidde"
+    }
+  ],
+  "mainEntity": [
+    {
+      "@type": "Article",
+      "name": "Hvordan lade elbil hjemme",
+      "url": "https://elbil.io/hvordan-lade-elbil-hjemme"
+    },
+    {
+      "@type": "Article",
+      "name": "Hvor mye sparer man på elbil?",
+      "url": "https://elbil.io/hvor-mye-sparer-man-pa-elbil"
+    },
+    {
+      "@type": "Article",
+      "name": "Hvor lenge varer en elbil?",
+      "url": "https://elbil.io/hvor-lenge-varer-elbil"
+    },
+    {
+      "@type": "Article",
+      "name": "Elbil lading — Komplett guide",
+      "url": "https://elbil.io/elbil-lading"
+    },
+    {
+      "@type": "Article",
+      "name": "Elbil kostnader — Full oversikt",
+      "url": "https://elbil.io/elbil-kostnader"
+    },
+    {
+      "@type": "Article",
+      "name": "Beste elbil i 2026",
+      "url": "https://elbil.io/beste-elbil"
+    }
+  ],
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://elbil.io/artikler/{search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
