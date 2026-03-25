@@ -98,14 +98,24 @@ export default function HomePage() {
         <div className="anim-up d3 space-y-4">
           <div className="grid grid-cols-2 gap-4">
             {[{ r:c1.ref,v:`${c1.val}+`,l:'Artikler' },{ r:c2.ref,v:c2.val,l:'Temaklynger' },{ r:null,v:'100%',l:'Oppdatert 2026' },{ r:c3.ref,v:c3.val,l:'Kalkulatorer' }].map((s,i)=>(
-              <div key={i} ref={s.r} className="bg-white/[0.07] border border-white/10 rounded-2xl p-5 hover:bg-white/[0.12] transition-colors">
-                <p className="text-3xl font-bold text-white">{s.v}</p><p className="text-gray-400 text-sm mt-1">{s.l}</p>
+              <div key={i} ref={s.r} className="hero-stat bg-white/[0.07] border border-white/10 rounded-2xl p-5 cursor-pointer">
+                <p className="hero-stat-num text-3xl font-bold text-white">{s.v}</p>
+                <p className="hero-stat-label text-gray-400 text-sm mt-1">{s.l}</p>
               </div>
             ))}
           </div>
           <div className="bg-white/[0.07] border border-white/10 rounded-2xl p-5">
             <p className="text-xs tracking-widest text-gray-400 font-medium mb-3 uppercase">Mest lest nå</p>
-            {trending.map((t,i)=>(<Link key={i} href={t.href} className="flex items-center justify-between py-2.5 border-b border-white/10 last:border-0 group"><div className="flex items-center gap-3"><span className="text-brand-400 text-sm font-medium w-5">{i+1}</span><div><p className="text-white text-[15px] font-medium group-hover:underline">{t.title}</p><p className="text-gray-400 text-xs">{t.cat}</p></div></div><IconArrowRight size={14} className="text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity"/></Link>))}
+            {trending.map((t,i)=>(<Link key={i} href={t.href} className="trend-item flex items-center justify-between py-2.5 border-b border-white/10 last:border-0">
+              <div className="flex items-center gap-3">
+                <span className="text-brand-400 text-sm font-medium w-5">{i+1}</span>
+                <div>
+                  <p className="trend-title text-white text-[15px] font-medium transition-colors">{t.title}</p>
+                  <p className="text-gray-500 text-xs">{t.cat}</p>
+                </div>
+              </div>
+              <svg className="trend-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </Link>))}
           </div>
         </div>
       </div>
