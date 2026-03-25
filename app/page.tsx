@@ -68,10 +68,11 @@ const faqs = [
   { q: 'Hvilken elbil har lengst rekkevidde?', a: 'I 2026 har flere modeller over 600 km WLTP rekkevidde. Mercedes EQS og Tesla Model S leder an.' },
 ]
 const vsRows = [
-  { label: 'Drivstoff per år', ev: '8 000 kr', fossil: '24 000 kr' },
-  { label: 'Vedlikehold per år', ev: '3 000 kr', fossil: '8 000 kr' },
-  { label: 'Bompenger (Oslo tur/retur)', ev: '0 kr', fossil: '78 kr' },
-  { label: 'Forsikring per år', ev: '9 000 kr', fossil: '11 000 kr' },
+  { label: 'Drivstoff per år', ev: 8000, fossil: 24000, unit: 'kr' },
+  { label: 'Vedlikehold per år', ev: 3000, fossil: 8000, unit: 'kr' },
+  { label: 'Bompenger per år', ev: 4800, fossil: 9600, unit: 'kr' },
+  { label: 'Forsikring per år', ev: 12000, fossil: 10000, unit: 'kr' },
+  { label: 'Verditap per år', ev: 40000, fossil: 45000, unit: 'kr' },
 ]
 
 export default function HomePage() {
@@ -137,23 +138,75 @@ export default function HomePage() {
     </div></Section>
 
     {/* ══ #7 ELBIL VS FOSSIL ══ */}
-    <Section className="py-16 lg:py-24 border-b border-gray-100"><div className="max-w-site mx-auto px-6">
-      <p className="text-xs tracking-widest text-brand-600 font-semibold mb-2 uppercase">Sammenligning</p>
-      <h2 className="font-display text-3xl lg:text-4xl font-medium tracking-tight mb-4">Elbil vs fossilbil</h2>
-      <p className="text-gray-500 text-lg mb-12 max-w-2xl">Se de reelle forskjellene i driftskostnader. Basert på 15 000 km per år med norske priser i 2026.</p>
-      <div ref={vs.ref} className="max-w-3xl">
-        <div className="grid grid-cols-[1fr_140px_140px] gap-4 pb-4 border-b-2 border-gray-200">
-          <div/><div className="text-center"><span className="inline-flex items-center gap-1.5 bg-brand-50 text-brand-700 px-3 py-1 rounded-full text-sm font-bold"><IconBolt size={14}/>Elbil</span></div>
-          <div className="text-center"><span className="inline-flex items-center gap-1.5 bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm font-bold">Fossilbil</span></div>
+    <Section dark className="py-16 lg:py-24"><div className="max-w-site mx-auto px-6">
+      <p className="text-xs tracking-widest text-brand-400 font-semibold mb-2 uppercase">Sammenligning</p>
+      <h2 className="font-display text-3xl lg:text-4xl font-medium tracking-tight text-white mb-4">Elbil vs fossilbil</h2>
+      <p className="text-gray-400 text-lg mb-12 max-w-2xl">Se de reelle forskjellene i årlige driftskostnader. Basert på 15 000 km per år med norske priser i 2026.</p>
+      <div ref={vs.ref}>
+        {/* Two column header */}
+        <div className="grid lg:grid-cols-2 gap-6 mb-8">
+          <div className="flex items-center gap-3 bg-brand-600/10 border border-brand-500/20 rounded-2xl px-6 py-4">
+            <IconBolt size={24} className="text-brand-400" />
+            <div><p className="text-white font-bold text-lg">Elbil</p><p className="text-gray-400 text-sm">Gjennomsnittlig ny elbil 2026</p></div>
+          </div>
+          <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl px-6 py-4">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="1.5" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            <div><p className="text-gray-300 font-bold text-lg">Fossilbil</p><p className="text-gray-500 text-sm">Gjennomsnittlig bensinbil</p></div>
+          </div>
         </div>
-        {vsRows.map((r,i)=>(<div key={i} className="grid grid-cols-[1fr_140px_140px] gap-4 py-5 border-b border-gray-100" style={{ opacity:vs.vi[i]?1:0, transform:vs.vi[i]?'translateX(0)':'translateX(-20px)', transition:'all .6s cubic-bezier(.16,1,.3,1)' }}>
-          <p className="text-[16px] text-gray-700 font-medium">{r.label}</p>
-          <p className="text-center text-lg font-bold text-brand-600">{r.ev}</p>
-          <p className="text-center text-lg text-gray-400 font-medium line-through decoration-gray-300">{r.fossil}</p>
-        </div>))}
-        <div className="grid grid-cols-[1fr_140px_140px] gap-4 pt-6 mt-2 border-t-2 border-gray-900" style={{ opacity:vs.vi[4]?1:0, transform:vs.vi[4]?'translateY(0)':'translateY(12px)', transition:'all .8s cubic-bezier(.16,1,.3,1)' }}>
-          <p className="text-lg font-bold text-gray-900">Total besparelse med elbil</p>
-          <p className="text-center text-2xl font-bold text-brand-600 col-span-2">~38 000 kr / år</p>
+        {/* Rows with bars */}
+        <div className="space-y-6">
+          {vsRows.map((r, i) => {
+            const max = Math.max(r.ev, r.fossil)
+            const evPct = (r.ev / max) * 100
+            const foPct = (r.fossil / max) * 100
+            const diff = r.fossil - r.ev
+            return (
+              <div key={i} className="bg-[#142030] rounded-2xl p-6 border border-white/5"
+                style={{ opacity: vs.vi[i] ? 1 : 0, transform: vs.vi[i] ? 'translateY(0)' : 'translateY(16px)', transition: `all .6s cubic-bezier(.16,1,.3,1)` }}>
+                <div className="flex items-center justify-between mb-4">
+                  <p className="text-white font-semibold text-[16px]">{r.label}</p>
+                  {diff > 0 && <span className="text-brand-400 text-sm font-bold">Du sparer {diff.toLocaleString('nb-NO')} kr</span>}
+                  {diff < 0 && <span className="text-gray-500 text-sm font-medium">Elbil {Math.abs(diff).toLocaleString('nb-NO')} kr dyrere</span>}
+                </div>
+                <div className="grid lg:grid-cols-2 gap-4">
+                  <div>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-sm text-gray-400">Elbil</span>
+                      <span className="text-lg font-bold text-brand-400">{r.ev.toLocaleString('nb-NO')} {r.unit}</span>
+                    </div>
+                    <div className="h-4 bg-white/5 rounded-full overflow-hidden">
+                      <div className="h-full rounded-full" style={{
+                        width: vs.vi[i] ? `${evPct}%` : '0%',
+                        background: 'linear-gradient(to right, #16a34a, #4ade80)',
+                        transition: 'width 1.2s cubic-bezier(.16,1,.3,1)',
+                      }} />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-sm text-gray-400">Fossilbil</span>
+                      <span className="text-lg font-medium text-gray-400">{r.fossil.toLocaleString('nb-NO')} {r.unit}</span>
+                    </div>
+                    <div className="h-4 bg-white/5 rounded-full overflow-hidden">
+                      <div className="h-full rounded-full" style={{
+                        width: vs.vi[i] ? `${foPct}%` : '0%',
+                        background: 'rgba(100,116,139,0.5)',
+                        transition: 'width 1.2s cubic-bezier(.16,1,.3,1) 0.2s',
+                      }} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+        {/* Total */}
+        <div className="mt-8 bg-brand-600/10 border border-brand-500/20 rounded-2xl p-8 text-center"
+          style={{ opacity: vs.vi[4] ? 1 : 0, transform: vs.vi[4] ? 'scale(1)' : 'scale(0.95)', transition: 'all .8s cubic-bezier(.16,1,.3,1)' }}>
+          <p className="text-gray-400 text-sm uppercase tracking-wider font-semibold mb-3">Total årlig besparelse med elbil</p>
+          <p className="text-5xl font-bold text-brand-400 font-display tracking-tight">~28 800 kr</p>
+          <p className="text-gray-400 text-sm mt-3">basert på 15 000 km per år med norske 2026 priser</p>
         </div>
       </div>
     </div></Section>
