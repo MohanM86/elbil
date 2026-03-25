@@ -114,8 +114,23 @@ function generateSitemap() {
   }
 
   // Lading & Forhandler - fylke/kommune pages
-  const norway = require('../lib/data/norway')
-  const fylker = norway.fylker || []
+  const fylker = [
+    { slug:'oslo', kommuner:[{slug:'oslo'}] },
+    { slug:'akershus', kommuner:[{slug:'baerum'},{slug:'asker'},{slug:'lillestrom'},{slug:'nordre-follo'},{slug:'lorenskog'},{slug:'raelingen'},{slug:'nittedal'},{slug:'aurskog-holand'},{slug:'aas'},{slug:'vestby'},{slug:'frogn'},{slug:'nesodden'},{slug:'enebakk'},{slug:'eidsvoll'},{slug:'nannestad'},{slug:'gjerdrum'},{slug:'ullensaker'},{slug:'nes'},{slug:'hurdal'},{slug:'lunner'},{slug:'jevnaker'}] },
+    { slug:'ostfold', kommuner:[{slug:'fredrikstad'},{slug:'sarpsborg'},{slug:'moss'},{slug:'halden'},{slug:'indre-ostfold'},{slug:'raade'},{slug:'vaaler-ostfold'},{slug:'skiptvet'},{slug:'rakkestad'},{slug:'marker'},{slug:'aremark'},{slug:'hvaler'}] },
+    { slug:'buskerud', kommuner:[{slug:'drammen'},{slug:'kongsberg'},{slug:'ringerike'},{slug:'lier'},{slug:'ovre-eiker'},{slug:'modum'},{slug:'hole'},{slug:'krodsherad'},{slug:'flaa'},{slug:'nesbyen'},{slug:'gol'},{slug:'hemsedal'},{slug:'aal'},{slug:'hol'},{slug:'sigdal'},{slug:'flesberg'},{slug:'rollag'},{slug:'nore-og-uvdal'}] },
+    { slug:'vestfold', kommuner:[{slug:'tonsberg'},{slug:'sandefjord'},{slug:'larvik'},{slug:'horten'},{slug:'holmestrand'},{slug:'faerder'}] },
+    { slug:'telemark', kommuner:[{slug:'skien'},{slug:'porsgrunn'},{slug:'notodden'},{slug:'bamble'},{slug:'kragero'},{slug:'drangedal'},{slug:'nome'},{slug:'midt-telemark'},{slug:'tinn'},{slug:'hjartdal'},{slug:'seljord'},{slug:'kviteseid'},{slug:'nissedal'},{slug:'fyresdal'},{slug:'tokke'},{slug:'vinje'},{slug:'siljan'}] },
+    { slug:'agder', kommuner:[{slug:'kristiansand'},{slug:'arendal'},{slug:'grimstad'},{slug:'mandal'},{slug:'farsund'},{slug:'flekkefjord'},{slug:'lyngdal'},{slug:'tvedestrand'},{slug:'risor'},{slug:'lillesand'},{slug:'vennesla'},{slug:'songdalen'},{slug:'sogne'},{slug:'lindesnes'},{slug:'kvinesdal'},{slug:'sirdal'}] },
+    { slug:'rogaland', kommuner:[{slug:'stavanger'},{slug:'sandnes'},{slug:'haugesund'},{slug:'sola'},{slug:'randaberg'},{slug:'eigersund'},{slug:'klepp'},{slug:'time'},{slug:'gjesdal'},{slug:'haa'},{slug:'strand'},{slug:'karmoy'}] },
+    { slug:'vestland', kommuner:[{slug:'bergen'},{slug:'askoy'},{slug:'oygarden'},{slug:'bjornafjorden'},{slug:'stord'},{slug:'bomlo'},{slug:'voss'},{slug:'sogndal'},{slug:'forde'},{slug:'alver'}] },
+    { slug:'more-og-romsdal', kommuner:[{slug:'aalesund'},{slug:'molde'},{slug:'kristiansund'},{slug:'ulstein'},{slug:'volda'},{slug:'heroy-more-og-romsdal'},{slug:'sula'},{slug:'haram'}] },
+    { slug:'trondelag', kommuner:[{slug:'trondheim'},{slug:'steinkjer'},{slug:'namsos'},{slug:'stjordal'},{slug:'levanger'},{slug:'verdal'},{slug:'malvik'},{slug:'melhus'},{slug:'skaun'},{slug:'orkland'}] },
+    { slug:'nordland', kommuner:[{slug:'bodo'},{slug:'narvik'},{slug:'rana'},{slug:'vefsn'},{slug:'sortland'},{slug:'fauske'},{slug:'meloy'},{slug:'hadsel'}] },
+    { slug:'troms', kommuner:[{slug:'tromso'},{slug:'harstad'},{slug:'senja'},{slug:'balsfjord'},{slug:'maalselv'},{slug:'lenvik'}] },
+    { slug:'finnmark', kommuner:[{slug:'hammerfest'},{slug:'alta'},{slug:'kirkenes'},{slug:'vadso'},{slug:'vardo'},{slug:'tana'},{slug:'kautokeino'}] },
+    { slug:'innlandet', kommuner:[{slug:'hamar'},{slug:'lillehammer'},{slug:'gjovik'},{slug:'elverum'},{slug:'ringsaker'},{slug:'stange'},{slug:'kongsvinger'},{slug:'nord-aurdal'},{slug:'ostre-toten'},{slug:'vestre-toten'},{slug:'gran'},{slug:'sondre-land'},{slug:'nordre-land'},{slug:'sel'},{slug:'ringebu'}] },
+  ]
 
   // Lading overview
   xml += `  <url>\n    <loc>${BASE_URL}/lading</loc>\n    <lastmod>${now}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n`
