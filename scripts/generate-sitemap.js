@@ -113,6 +113,26 @@ function generateSitemap() {
     xml += `  <url>\n    <loc>${BASE_URL}/artikler/${slug}</loc>\n    <lastmod>${now}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`
   }
 
+  // Lading & Forhandler - fylke/kommune pages
+  const norway = require('../lib/data/norway')
+  const fylker = norway.fylker || []
+
+  // Lading overview
+  xml += `  <url>\n    <loc>${BASE_URL}/lading</loc>\n    <lastmod>${now}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n`
+  // Forhandler overview
+  xml += `  <url>\n    <loc>${BASE_URL}/forhandler</loc>\n    <lastmod>${now}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n`
+
+  for (const f of fylker) {
+    // Fylke pages
+    xml += `  <url>\n    <loc>${BASE_URL}/lading/${f.slug}</loc>\n    <lastmod>${now}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`
+    xml += `  <url>\n    <loc>${BASE_URL}/forhandler/${f.slug}</loc>\n    <lastmod>${now}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`
+    // Kommune pages
+    for (const k of f.kommuner) {
+      xml += `  <url>\n    <loc>${BASE_URL}/lading/${f.slug}/${k.slug}</loc>\n    <lastmod>${now}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`
+      xml += `  <url>\n    <loc>${BASE_URL}/forhandler/${f.slug}/${k.slug}</loc>\n    <lastmod>${now}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`
+    }
+  }
+
   xml += '</urlset>\n'
   return xml
 }
