@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { IconPlug, IconWallet, IconTrophy, IconRuler, IconBattery, IconCompass, IconGauge, IconCalculator, IconArrowRight, IconUsers, IconLeaf, IconMap, IconHelpCircle, IconBolt, IconClock } from '@/components/Icons'
+import StatsSection from '@/components/StatsSection'
 
 /* ── Counter hook ── */
 function useCounter(target: number, duration = 1400) {
@@ -90,11 +91,6 @@ const faqs = [
   { q: 'Hvor langt kjører en elbil om vinteren?', a: 'Rekkevidden faller til 60 til 80 prosent av WLTP om vinteren, avhengig av temperatur og kjørestil.' },
   { q: 'Hvor lenge varer batteriet i en elbil?', a: 'Moderne elbilbatterier varer typisk 15 til 20 år og beholder over 80 prosent av kapasiteten etter 10 år.' },
   { q: 'Hvilken elbil har lengst rekkevidde?', a: 'I 2026 har flere modeller over 600 km WLTP rekkevidde. Mercedes EQS og Tesla Model S leder an.' },
-]
-
-const barData = [
-  { year: '2020', pct: 54 }, { year: '2021', pct: 65 }, { year: '2022', pct: 79 },
-  { year: '2023', pct: 82 }, { year: '2024', pct: 89 }, { year: '2025', pct: 93 },
 ]
 
 export default function HomePage() {
@@ -214,49 +210,7 @@ export default function HomePage() {
         <div className="max-w-site mx-auto px-6">
           <p className="text-xs tracking-widest text-brand-400 font-semibold mb-2 uppercase">Elbil i Norge i tall</p>
           <h2 className="font-display text-3xl lg:text-4xl font-medium tracking-tight text-white mb-12">Markedet vokser hvert eneste år</h2>
-          <div className="grid lg:grid-cols-2 gap-6">
-            {/* Bar chart */}
-            <div className="bg-[#142030] rounded-2xl p-8">
-              <p className="text-sm text-gray-400 tracking-wide mb-6 uppercase font-medium">Markedsandel nybilsalg</p>
-              <div className="flex items-end gap-4 h-64">
-                {barData.map((b, i) => (
-                  <div key={i} className="flex-1 flex flex-col items-center gap-2">
-                    <span className="text-xs text-gray-300 font-medium">{b.pct}%</span>
-                    <div className="w-full rounded-t-md" style={{
-                      height: `${(b.pct / 100) * 240}px`,
-                      background: i === barData.length - 1 ? '#fff' : `rgba(255,255,255,${0.25 + i * 0.12})`,
-                      animation: `barGrow 1s cubic-bezier(.16,1,.3,1) ${i * 0.1}s both`,
-                    }} />
-                    <span className={`text-xs ${i === barData.length - 1 ? 'text-white font-semibold' : 'text-gray-400'}`}>{b.year}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            {/* Cost comparison */}
-            <div className="bg-[#142030] rounded-2xl p-8">
-              <p className="text-sm text-gray-400 tracking-wide mb-8 uppercase font-medium">Kostnad per mil</p>
-              {[
-                { label: 'Elbil hjemmelading', val: '2 kr', pct: 14, color: '#fff' },
-                { label: 'Elbil hurtiglading', val: '6 kr', pct: 43, color: '#94a3b8' },
-                { label: 'Bensinbil', val: '14 kr', pct: 100, color: '#475569' },
-              ].map((r, i) => (
-                <div key={i} className="mb-7 last:mb-0">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-[15px] text-gray-200 font-medium">{r.label}</span>
-                    <span className="text-xl font-semibold" style={{ color: r.color }}>{r.val}</span>
-                  </div>
-                  <div className="h-4 bg-white/10 rounded-full overflow-hidden">
-                    <div className="h-full rounded-full" style={{
-                      width: `${r.pct}%`,
-                      background: r.color,
-                      animation: `fillWidth 1.2s cubic-bezier(.16,1,.3,1) ${i * 0.2}s both`,
-                      ['--w' as string]: `${r.pct}%`,
-                    }} />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <StatsSection />
         </div>
       </Section>
 
