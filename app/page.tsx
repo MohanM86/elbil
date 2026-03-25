@@ -218,13 +218,13 @@ export default function HomePage() {
             {/* Bar chart */}
             <div className="bg-[#142030] rounded-2xl p-8">
               <p className="text-sm text-gray-400 tracking-wide mb-6 uppercase font-medium">Markedsandel nybilsalg</p>
-              <div className="flex items-end gap-3 h-48">
+              <div className="flex items-end gap-4 h-64">
                 {barData.map((b, i) => (
                   <div key={i} className="flex-1 flex flex-col items-center gap-2">
                     <span className="text-xs text-gray-300 font-medium">{b.pct}%</span>
                     <div className="w-full rounded-t-md" style={{
-                      height: `${(b.pct / 100) * 170}px`,
-                      background: i === barData.length - 1 ? '#fff' : `rgba(255,255,255,${0.15 + i * 0.1})`,
+                      height: `${(b.pct / 100) * 240}px`,
+                      background: i === barData.length - 1 ? '#fff' : `rgba(255,255,255,${0.25 + i * 0.12})`,
                       animation: `barGrow 1s cubic-bezier(.16,1,.3,1) ${i * 0.1}s both`,
                     }} />
                     <span className={`text-xs ${i === barData.length - 1 ? 'text-white font-semibold' : 'text-gray-400'}`}>{b.year}</span>
@@ -245,7 +245,7 @@ export default function HomePage() {
                     <span className="text-[15px] text-gray-200 font-medium">{r.label}</span>
                     <span className="text-xl font-semibold" style={{ color: r.color }}>{r.val}</span>
                   </div>
-                  <div className="h-3 bg-white/5 rounded-full overflow-hidden">
+                  <div className="h-4 bg-white/10 rounded-full overflow-hidden">
                     <div className="h-full rounded-full" style={{
                       width: `${r.pct}%`,
                       background: r.color,
@@ -268,14 +268,14 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-3 gap-6">
             {guides.map((g, i) => (
               <Link key={i} href={g.href}
-                className={`group rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all ${i === 1 ? 'bg-brand-700 text-white border-brand-700' : 'bg-gray-50'}`}>
-                <div className={`h-44 flex items-center justify-center ${i === 1 ? 'bg-brand-600/30' : 'bg-brand-50'}`}>
+                className={`group rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition-all ${i === 1 ? 'bg-[#0c1420] text-white border-[#0c1420]' : 'bg-gray-50'}`}>
+                <div className={`h-44 flex items-center justify-center ${i === 1 ? 'bg-[#142030]' : 'bg-brand-50'}`}>
                   <div className={i === 1 ? 'text-white/60' : 'text-brand-300'}>{g.icon}</div>
                 </div>
                 <div className="p-6">
-                  <p className={`text-xs tracking-wider font-semibold mb-2 uppercase ${i === 1 ? 'text-brand-200' : 'text-brand-600'}`}>{g.tag}</p>
+                  <p className={`text-xs tracking-wider font-semibold mb-2 uppercase ${i === 1 ? 'text-gray-400' : 'text-brand-600'}`}>{g.tag}</p>
                   <h3 className={`text-xl font-bold mb-2 group-hover:underline ${i === 1 ? 'text-white' : 'text-gray-900'}`}>{g.title}</h3>
-                  <p className={`text-sm leading-relaxed ${i === 1 ? 'text-brand-100' : 'text-gray-500'}`}>{g.desc}</p>
+                  <p className={`text-sm leading-relaxed ${i === 1 ? 'text-gray-300' : 'text-gray-500'}`}>{g.desc}</p>
                   <p className={`text-sm font-semibold mt-4 flex items-center gap-1 ${i === 1 ? 'text-white' : 'text-brand-600'}`}>
                     Les guiden <IconArrowRight size={13} />
                   </p>
@@ -348,11 +348,11 @@ export default function HomePage() {
                   </Link>
                 ))}
               </div>
-              <div className="bg-brand-700 rounded-2xl p-6 text-white">
-                <p className="text-xs text-brand-200 font-semibold uppercase tracking-wide mb-2">Verktøy</p>
+              <div className="bg-[#0c1420] rounded-2xl p-6 text-white">
+                <p className="text-xs text-brand-400 font-semibold uppercase tracking-wide mb-2">Verktøy</p>
                 <p className="text-xl font-bold mb-2">Beregn din ladekostnad</p>
-                <p className="text-brand-100 text-sm mb-5">Finn ut hva det koster å lade din elbil per år, og sammenlign med bensin.</p>
-                <Link href="/verktoy/ladekalkulator" className="inline-flex items-center gap-2 bg-white text-brand-700 px-5 py-2.5 rounded-full text-sm font-semibold">
+                <p className="text-gray-400 text-sm mb-5">Finn ut hva det koster å lade din elbil per år, og sammenlign med bensin.</p>
+                <Link href="/verktoy/ladekalkulator" className="inline-flex items-center gap-2 bg-white text-gray-900 px-5 py-2.5 rounded-full text-sm font-semibold">
                   Prøv kalkulatoren <IconArrowRight size={13} />
                 </Link>
               </div>
